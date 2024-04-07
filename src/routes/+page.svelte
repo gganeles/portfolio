@@ -1,10 +1,10 @@
 <script lang="ts">
     import ProjectDisplay from "$lib/ProjectDisplay.svelte";
-    import {dev, building} from "$app/environment"
+    //import {dev, building} from "$app/environment"
 
     function generateProject(title: string, src = 'images/e44d5f00-6bed-4075-bb5c-c2f91fbe77b4.jpeg', desc = "") {
         return {
-            src: dev || building ? src : "static" + src,
+            src,
             title, desc
         }
     };
