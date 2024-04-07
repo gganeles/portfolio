@@ -1,13 +1,13 @@
 <script lang="ts">
     import ProjectDisplay from "$lib/ProjectDisplay.svelte";
 
-    //import {dev, building} from "$app/environment"
+    import {dev, } from "$app/environment"
 
     function generateProject(title: string, src = 'images/e44d5f00-6bed-4075-bb5c-c2f91fbe77b4.jpeg', desc = "",url = "") {
         return {
-            src, title, desc, url
+            src:dev?src:"../../../"+src, title, desc, url
         }
-    };
+    }
 
     let projects = [
         generateProject("ShabBOT:", "images/93b13e09-5dad-4fab-b131-a5488a0df60b.jpeg", "Shabbat Whatsapp Assistant","/folder"),
