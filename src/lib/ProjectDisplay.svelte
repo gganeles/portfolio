@@ -1,6 +1,6 @@
 <script>
     export let title = "";
-    export let src = '/images/e44d5f00-6bed-4075-bb5c-c2f91fbe77b4.jpeg';
+    export let src;
     export let desc;
 </script>
 

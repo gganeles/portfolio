@@ -1,13 +1,17 @@
 <script lang="ts">
     import ProjectDisplay from "$lib/ProjectDisplay.svelte";
+    import {dev} from "$app/environment"
 
-    const generateProject = (title:string,src?:string, desc = "") => {
-        return {src, title, desc}
+    function generateProject(title: string, src = 'images/e44d5f00-6bed-4075-bb5c-c2f91fbe77b4.jpeg', desc = "") {
+        return {
+            src: dev ? src : "static" + src,
+            title, desc
+        }
     };
 
     let projects = [
-        generateProject("ShabBOT:","/images/93b13e09-5dad-4fab-b131-a5488a0df60b.jpeg", "Shabbat Whatsapp Assistant"),
-        generateProject("Formula Technion Website","/images/Screenshot 2024-04-07 235706.png"),
+        generateProject("ShabBOT:", "/images/93b13e09-5dad-4fab-b131-a5488a0df60b.jpeg", "Shabbat Whatsapp Assistant"),
+        generateProject("Formula Technion Website", "/images/Screenshot 2024-04-07 235706.png"),
         generateProject("Formula Student PCB Design"),
         generateProject("Parachute Mechanism"),
         generateProject("CERN Intern"),
