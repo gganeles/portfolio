@@ -10,7 +10,7 @@
     }
 
     let projects = [
-        generateProject("ShabBOT:", "images/93b13e09-5dad-4fab-b131-a5488a0df60b.jpeg", "Shabbat Whatsapp Assistant","/folder"),
+        generateProject("ShabBOT", "images/93b13e09-5dad-4fab-b131-a5488a0df60b.jpeg", "Shabbat Whatsapp Assistant","/folder"),
         generateProject("Formula Technion Website", "images/formulaSite.png","formulatechnion.com","https://formulatechnion.com"),
         generateProject("Set and Other Games","images/setGame.png","Realtime card game website","https://setgame-4508c.web.app"),
         generateProject("Formula Student PCB Design"),
@@ -21,6 +21,10 @@
     ]
 </script>
 
+
+<svelte:head>
+    <title>Gabriel Ganeles</title>
+</svelte:head>
 <div class="p-4 pt-10">
     <h1 class="text-7xl pb-2">
         Gabriel Ganeles
