@@ -10,7 +10,7 @@
     }
 
     let projects = [
-        generateProject("ShabBOT", "images/93b13e09-5dad-4fab-b131-a5488a0df60b.jpeg", "Shabbat Whatsapp Assistant","https://gganeles.github.io/portfolio/folder"),
+        generateProject("ShabBOT", "images/93b13e09-5dad-4fab-b131-a5488a0df60b.jpeg", "Shabbat Whatsapp Assistant","https://github.com/oxume/shabbot/tree/main#docs"),
         generateProject("Formula Technion Website", "images/formulaSite.png","formulatechnion.com","https://formulatechnion.com"),
         generateProject("Set and Other Games","images/setGame.png","Realtime card game website","https://setgame-4508c.web.app"),
         generateProject("Formula Student PCB Design","images/pcb3d.png"),
