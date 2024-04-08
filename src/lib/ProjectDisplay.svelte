@@ -11,11 +11,11 @@
     <div class="absolute w-full h-full group-hover:bg-black group-hover:bg-opacity-50 transition">
     </div>
     <div class="absolute bottom-0 p-1 text-pretty text-slate-200 bg-black bg-opacity-50 w-full">
-        <h3>
+        <h3 class="max-sm:text-xs">
             {title}
         </h3>
         {#if $$props.desc}
-            <p class="text-sm">
+            <p class="text-sm max-sm:text-[8pt] max-sm:leading-3 max-sm:pt-0.5">
                 {desc}
             </p>
         {/if}

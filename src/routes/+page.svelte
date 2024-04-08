@@ -17,7 +17,7 @@
         generateProject("Parachute Mechanism","images/parachuteLauncher.png"),
         generateProject("Hybrid Solid-Gas Model Rocket","images/rocketDesign.png"),
         generateProject("CERN ATLAS Detector","images/newSmallWheel.png","New Small Wheel student engineer",),
-        generateProject("sEEG Data Analysis Pipeline"),
+        generateProject("sEEG-to-Speech Data Analysis Pipeline",undefined,""),
         generateProject("Robotic Gripper Design","images/fishGripper.png","Robotic gripper for fish pick and place"),
     ]
 </script>
@@ -34,7 +34,7 @@
     <h2 class="py-2">
         Age: 22
     </h2>
-    <div class="pb-2">
+    <div class="pb-8">
         Skills: software development, mechanical design, electrical design
     </div>
     <div>
