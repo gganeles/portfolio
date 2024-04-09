@@ -1,13 +1,13 @@
 <script lang="ts">
     export let title = "";
-    export let src;
-    export let desc;
-    export let url;
+    export let src: string;
+    export let desc: string;
+    export let url: string;
     let w: number;
 </script>
 
 
-<a class="group w-full class0 relative hover:cursor-pointer" href={url} bind:clientWidth={w} style="--height:{w}px">
+<a class="group w-full class0 relative {!Boolean(url)&&"hover:cursor-default"}" href={url?url:""} bind:clientWidth={w} style="--height:{w}px;">
     <div class="absolute w-full h-full group-hover:bg-black group-hover:bg-opacity-50 transition">
     </div>
     <div class="absolute bottom-0 p-1 text-pretty text-slate-200 bg-black bg-opacity-50 w-full">
