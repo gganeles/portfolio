@@ -57,6 +57,7 @@
                 "Hybrid Solid-Gas Model Rocket",
                 "images/rocketDesign.png",
             ),
+            generateProject("Formula Student PCB Design", "images/pcb3d.png","CANbus sensor modules"),
 
             generateProject(
                 "Robotic Gripper Design",
@@ -77,14 +78,14 @@
             <h2 class="text-3xl">Biomedical Engineering Student</h2>
         </div>
         <div class="p-2 pb-8">
-            <h1 class='text-5xl'>
-                Experience
-            </h1>
+            <h1 class="text-5xl">Experience</h1>
             {#each Object.keys(projects) as projectType}
-                <div class='py-8 text-3xl'>
+                <div class="py-8 text-3xl">
                     {projectType}
                 </div>
-                <div class="grid grid-cols-3 max-sm:grid-cols-2 gap-2 max-sm:gap-1">
+                <div
+                    class="grid grid-cols-3 max-sm:grid-cols-2 gap-2 max-sm:gap-1"
+                >
                     {#each projects[projectType] as proj}
                         <ProjectDisplay
                             src={proj.src}
