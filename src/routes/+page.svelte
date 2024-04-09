@@ -57,7 +57,11 @@
                 "Hybrid Solid-Gas Model Rocket",
                 "images/rocketDesign.png",
             ),
-            generateProject("Formula Student PCB Design", "images/pcb3d.png","CANbus sensor modules"),
+            generateProject(
+                "Formula Student PCB Design",
+                "images/pcb3d.png",
+                "CANbus sensor modules",
+            ),
 
             generateProject(
                 "Robotic Gripper Design",
@@ -72,10 +76,14 @@
     <title>Gabriel Ganeles</title>
 </svelte:head>
 <div class="flex items-center w-full flex-col">
-    <div class="p-0 pt-10 w-full max-w-[1000px]">
-        <div class="py-72 px-2 max-sm:py-40">
-            <h1 class="text-7xl">Gabriel Ganeles</h1>
-            <h2 class="text-3xl">Biomedical Engineering Student</h2>
+    <div class="pt-80 max-sm:pt-40 picture w-full flex flex-col items-center">
+        <div class="max-w-[1000px] w-full">
+            <h1 class="text-7xl pl-2 text-white">Gabriel Ganeles</h1>
+        </div>
+    </div>
+    <div class="p-0 w-full max-w-[1000px]">
+        <div class="pb-72 max-sm:pb-40">
+            <h2 class="text-3xl p-2">Biomedical Engineering Student</h2>
         </div>
         <div class="p-2 pb-8">
             <h1 class="text-5xl">Experience</h1>
@@ -107,3 +115,11 @@
         </div>
     </div>
 </div>
+
+<style>
+    .picture {
+        background-image: url("../../../images/jamesWebb.webp");
+        background-position: center;
+        background-size: cover;
+    }
+</style>
