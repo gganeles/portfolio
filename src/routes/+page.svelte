@@ -8,12 +8,16 @@
         src = "images/e44d5f00-6bed-4075-bb5c-c2f91fbe77b4.jpeg",
         desc = "",
         url = "",
+        codeLang = "",
+        program
     ) {
         return {
             src: dev ? src : "../../../" + src,
             title,
             desc,
             url,
+            codeLang,
+            program
         };
     }
 
@@ -24,49 +28,70 @@
                 "images/93b13e09-5dad-4fab-b131-a5488a0df60b.jpeg",
                 "Shabbat Whatsapp Assistant",
                 "https://github.com/gganeles/shabBOT#readme-ov-file",
+                "Node.js"
             ),
             generateProject(
                 "Formula Technion Website",
                 "images/formulaSite.png",
-                "formulatechnion.com",
+                "Interactive formula team site",
                 "https://formulatechnion.com",
+                "Svelte+Cloudflare Pages"
             ),
             generateProject(
                 "Set and Other Games",
                 "images/setGame.png",
-                "Realtime card game website",
+                "Realtime multiplayer card game website",
                 "https://setgame-4508c.web.app",
+                "Svelte+Firebase"
             ),
             generateProject(
-                "CERN ATLAS Detector Algorithm",
+                "CERN ATLAS' New Small Wheel",
                 "images/newSmallWheel.png",
-                "sTGC muon detector software",
+                "sTGC pad triggers algorithm",
+                "https://indico.cern.ch/event/354058/contributions/832493/attachments/701559/963190/NSW_ELX_overview_for_Feb2015review.pdf",
+                "Python"
             ),
             generateProject(
-                "sEEG-to-Speech Data Analysis Pipeline",
+                "sEEG/ECoG to Speech Decoder",
                 "images/NY917_T1_D_left_both_label.png",
-                "",
+                "Data preperation and analysis pipeline",
+                "https://www.nature.com/articles/s42256-024-00824-8",
+                "MATLAB"
             ),
         ],
         Design: [
             generateProject(
                 "Parachute Mechanism",
                 "images/parachuteLauncher.png",
+                "Spring-based launcher",
+                undefined,
+                undefined,
+                "Onshape"
             ),
             generateProject(
                 "Hybrid Solid-Gas Model Rocket",
                 "images/rocketDesign.png",
+                undefined,
+                undefined,
+                undefined,
+                "Onshape"
             ),
             generateProject(
                 "Formula Student PCB Design",
                 "images/pcb3d.png",
                 "CANbus sensor modules",
+                undefined,
+                undefined,
+                "Altium"
             ),
 
             generateProject(
                 "Robotic Gripper Design",
                 "images/fishGripper.png",
                 "Robotic gripper for fish pick and place",
+                undefined,
+                undefined,
+                "Onshape"
             ),
         ],
     };
@@ -95,12 +120,7 @@
                     class="grid grid-cols-3 max-sm:grid-cols-2 gap-2 max-sm:gap-1"
                 >
                     {#each projects[projectType] as proj}
-                        <ProjectDisplay
-                            src={proj.src}
-                            title={proj.title}
-                            desc={proj.desc}
-                            url={proj.url}
-                        />
+                        <ProjectDisplay {proj}/>
                     {/each}
                 </div>
             {/each}
