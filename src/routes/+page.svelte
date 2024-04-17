@@ -134,7 +134,7 @@
             {/if}
             </div>
         <div transition:fade={{ duration: 500 }} class="">
-            <h2 class="text-3xl p-2 gap-2 flex flex-row">
+            <h2 class="text-3xl p-2 gap-2 flex flex-col md:flex-row ">
                 {#if fadeTrig}
                     <span use:cascade={{interval:33}}>Biomedical Engineering Student, </span
                     >
