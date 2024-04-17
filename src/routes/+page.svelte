@@ -143,7 +143,7 @@
             </div>
             <video autoplay muted loop class="h-screen w-screen object-cover blur-sm">
                 <source
-                    src='/vids/mainBg.mp4'
+                    src='vids/mainBg.mp4'
                     type="video/mp4"
                 />
             </video>
