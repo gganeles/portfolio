@@ -25,7 +25,9 @@
         : 'w-1/6'}  {!Boolean(proj.url) && 'hover:cursor-default'}"
     on:click={(e) => {
         console.log(e);
-        if (e.pointerType == "mouse") {
+        if (!proj.url) {
+            return
+        } else if (e.pointerType == "mouse") {
             window.location = proj.url;
         } else if (shield) {
             window.location = proj.url;
@@ -43,7 +45,7 @@
         <div
             class="absolute h-full flex flex-col justify-center bottom-0 p-1 text-pretty text-white bg-black bg-opacity-50 w-full"
             in:fade={{duration:230,delay:300}}
-            out:fade={{duration:50}}
+            out:fade={{duration:100}}
         >
             <h3 class="max-sm:text-lg text-2xl">
                 {proj.title}
