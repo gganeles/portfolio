@@ -24,7 +24,6 @@
         ? 'w-5/6'
         : 'w-1/6'}  {!Boolean(proj.url) && 'hover:cursor-default'}"
     on:click={(e) => {
-        console.log(e);
         if (!proj.url) {
             return
         } else if (e.pointerType == "mouse") {

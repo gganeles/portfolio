@@ -40,9 +40,9 @@
         setTimeout(() => {
             fadeTrig2 = true;
         }, 7000);
-        setTimeout(()=>{
+        setTimeout(() => {
             nameTrig = true;
-        }, 2000)
+        }, 2000);
     });
 
     let projects = {
@@ -126,21 +126,27 @@
 </svelte:head>
 <div class="flex items-center w-full flex-col text-center text-white">
     <div class="relative flex h-screen w-full flex flex-col items-center">
-            <div
-                class="pt-40 md:pt-96 transition-all w-full"
-            >
+        <div class="pt-40 md:pt-96 transition-all w-full">
             {#if nameTrig}
-                <h1 use:cascade={{interval:50}} class="text-7xl pl-2 drop-shadow-2xl">Gabriel Ganeles</h1>
+                <h1
+                    use:cascade={{ interval: 50 }}
+                    class="text-7xl pl-2 drop-shadow-2xl"
+                >
+                    Gabriel Ganeles
+                </h1>
             {/if}
-            </div>
+        </div>
         <div transition:fade={{ duration: 500 }} class="">
-            <h2 class="text-3xl p-2 gap-2 flex flex-col md:flex-row ">
+            <h2 class="text-3xl p-2 gap-2 flex flex-col md:flex-row">
                 {#if fadeTrig}
-                    <span use:cascade={{interval:33}}>Biomedical Engineering Student, </span
-                    >
+                    <span use:cascade={{ interval: 33 }}
+                        >Biomedical Engineering Student,
+                    </span>
                 {/if}
                 {#if fadeTrig1}
-                    <span use:cascade={{interval:30}}> Freelance Programmer </span>
+                    <span use:cascade={{ interval: 30 }}>
+                        Software Engineer
+                    </span>
                 {/if}
             </h2>
         </div>
@@ -192,6 +198,24 @@
                         on:hovered={(e) => (selectedInd2 = e.detail)}
                     />
                 {/each}
+            </div>
+        </div>
+    </div>
+    <div class="w-full flex flex-col items-center justify-center pb-20">
+        <div class="text-5xl">CV</div>
+        <div class="text-slate-400">Click Image to Download</div>
+        <div
+            class="relative w-2/3 h-[400px] overflow-hidden cursor-pointer"
+            on:click={() => {
+                var link =  document.createElement("a");
+                link.download = "GabrielGanelesCV.pdf"; // <- name instead of 'name'
+                link.href = "CV.pdf";
+                link.click();
+                link.remove();
+            }}
+        >
+            <img class='absolute' alt="resume" src="images/CV.webp" />
+            <div class='absolute w-full h-full bg-black bg-opacity-0 hover:bg-opacity-60 transition-all'>
             </div>
         </div>
     </div>
