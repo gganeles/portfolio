@@ -27,19 +27,31 @@
     let fadeTrig2 = false;
     let fadeTrig1 = false;
     let nameTrig = false;
-
+    let flash = false;
     let selectedInd = 0;
     let selectedInd2 = 0;
     onMount(() => {
+        let flashId;
         setTimeout(() => {
             fadeTrig = true;
+            clearInterval(flashId)
         }, 3700);
         setTimeout(() => {
             fadeTrig1 = true;
         }, 5000);
         setTimeout(() => {
+            flashId = setInterval(()=>{
+                flash=!flash
+            },500)
+        }, 2500);
+        setTimeout(() => {
+            flashId = setInterval(()=>{
+                flash=!flash
+            },500)
+        }, 5600);
+        setTimeout(()=>{
             fadeTrig2 = true;
-        }, 7000);
+        }, 7000)
         setTimeout(() => {
             nameTrig = true;
         }, 2000);
@@ -47,6 +59,20 @@
 
     let projects = {
         Programming: [
+            generateProject(
+                "CERN ATLAS' New Small Wheel",
+                "images/newSmallWheel.png",
+                "sTGC pad triggers algorithm",
+                "https://indico.cern.ch/event/354058/contributions/832493/attachments/701559/963190/NSW_ELX_overview_for_Feb2015review.pdf",
+                "Python",
+            ),
+            generateProject(
+                "sEEG/ECoG to Speech Decoder",
+                "images/NY917_T1_D_left_both_label.png",
+                "Data preperation and analysis pipeline",
+                "https://www.nature.com/articles/s42256-024-00824-8",
+                "MATLAB",
+            ),
             generateProject(
                 "ShabBOT",
                 "images/93b13e09-5dad-4fab-b131-a5488a0df60b.jpeg",
@@ -68,29 +94,15 @@
                 "https://setgame-4508c.web.app",
                 "Svelte+Firebase",
             ),
-            generateProject(
-                "CERN ATLAS' New Small Wheel",
-                "images/newSmallWheel.png",
-                "sTGC pad triggers algorithm",
-                "https://indico.cern.ch/event/354058/contributions/832493/attachments/701559/963190/NSW_ELX_overview_for_Feb2015review.pdf",
-                "Python",
-            ),
-            generateProject(
-                "sEEG/ECoG to Speech Decoder",
-                "images/NY917_T1_D_left_both_label.png",
-                "Data preperation and analysis pipeline",
-                "https://www.nature.com/articles/s42256-024-00824-8",
-                "MATLAB",
-            ),
         ],
         Design: [
             generateProject(
-                "Parachute Mechanism",
-                "images/parachuteLauncher.png",
-                "Spring-based launcher",
+                "Formula Student PCB Design",
+                "images/pcb3d.png",
+                "CANbus sensor modules",
                 undefined,
                 undefined,
-                "Onshape",
+                "Altium",
             ),
             generateProject(
                 "Hybrid Solid-Gas Model Rocket",
@@ -101,14 +113,13 @@
                 "Onshape",
             ),
             generateProject(
-                "Formula Student PCB Design",
-                "images/pcb3d.png",
-                "CANbus sensor modules",
+                "Parachute Mechanism",
+                "images/parachuteLauncher.png",
+                "Spring-based launcher",
                 undefined,
                 undefined,
-                "Altium",
+                "Onshape",
             ),
-
             generateProject(
                 "Robotic Gripper Design",
                 "images/fishGripper.png",
@@ -126,18 +137,25 @@
 </svelte:head>
 <div class="flex items-center w-full flex-col text-center text-white">
     <div class="relative flex h-screen w-full flex flex-col items-center">
-        <div class="pt-40 md:pt-96 transition-all w-full">
+        <div
+            class="flex pt-40 md:pt-96 transition-all w-full justify-center items-center"
+        >
             {#if nameTrig}
-                <h1
-                    use:cascade={{ interval: 50 }}
-                    class="text-7xl pl-2 drop-shadow-2xl"
-                >
-                    Gabriel Ganeles
-                </h1>
+                <div style="display: contents;" class="text-7xl drop-shadow-2xl max-md:text-4xl">
+                    <span
+                        use:cascade={{ interval: 50 }}
+                        class=""
+                    >
+                        Gabriel Ganeles  
+                    </span>
+                    {#if !fadeTrig}
+                        <span class="-translate-y-2 -translate-x-0.5 max-md:-translate-y-1 max-md:-translate-x-0.5" class:flash>|</span>
+                    {/if}
+                </div>
             {/if}
         </div>
         <div transition:fade={{ duration: 500 }} class="">
-            <h2 class="text-3xl p-2 gap-2 flex flex-col md:flex-row">
+            <h2 class="text-3xl p-2 gap-2 flex flex-wrap justify-center max-md:text-xl flex-row">
                 {#if fadeTrig}
                     <span use:cascade={{ interval: 33 }}
                         >Biomedical Engineering Student,
@@ -147,6 +165,9 @@
                     <span use:cascade={{ interval: 30 }}>
                         Software Engineer
                     </span>
+                {/if}
+                {#if fadeTrig}
+                    <span class="-translate-y-0.5 md:-translate-y-[3px] -translate-x-2" class:flash> | </span>
                 {/if}
             </h2>
         </div>
@@ -201,22 +222,26 @@
             </div>
         </div>
     </div>
-    <div class="w-full flex flex-col items-center justify-center pb-20">
+    <div class="w-full h-full flex flex-col items-center justify-center pb-20">
         <div class="text-5xl">CV</div>
         <div class="text-slate-400">Click Image to Download</div>
         <div
-            class="relative w-2/3 h-[400px] overflow-hidden cursor-pointer"
+            class="relative w-2/3 h-full cursor-pointer"
             on:click={() => {
-                var link =  document.createElement("a");
+                var link = document.createElement("a");
                 link.download = "GabrielGanelesCV.pdf"; // <- name instead of 'name'
                 link.href = "CV.pdf";
                 link.click();
                 link.remove();
             }}
         >
-            <img class='absolute' alt="resume" src="images/CV.webp" />
-            <div class='absolute w-full h-full bg-black bg-opacity-0 hover:bg-opacity-60 transition-all'>
+            <div class="">
+                <img alt="resume" src="images/CV1.webp" />
+                <img alt="resume" src="images/CV2.webp" />
             </div>
+            <div
+                class="absolute top-0 w-full h-full bg-black bg-opacity-0 hover:bg-opacity-60 transition-all"
+            ></div>
         </div>
     </div>
     <div class="py-52 px-8 bg-slate-800 w-full flex items-center">
@@ -261,5 +286,9 @@
 
     .bg-thin {
         background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .flash {
+        opacity: 0;
     }
 </style>
