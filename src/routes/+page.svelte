@@ -38,7 +38,7 @@
         }, 3700);
         setTimeout(() => {
             fadeTrig1 = true;
-        }, 5000);
+        }, 5400);
         setTimeout(() => {
             flashId = setInterval(()=>{
                 flash=!flash
@@ -51,7 +51,7 @@
         }, 5600);
         setTimeout(()=>{
             fadeTrig2 = true;
-        }, 7000)
+        }, 7400)
         setTimeout(() => {
             nameTrig = true;
         }, 2000);
