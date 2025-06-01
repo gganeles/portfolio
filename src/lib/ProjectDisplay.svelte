@@ -19,30 +19,17 @@
     let w: number;
 </script>
 
+<div class="min-w-fit snap-center mx-2 rounded-lg overflow-hidden">
+
 <button
-    class="group class0 relative transition-all h-[500px] max-sm:h-[230px] {selected
-        ? 'w-5/6'
-        : 'w-1/6'}  {!Boolean(proj.url) && 'hover:cursor-default'}"
-    on:click={(e) => {
-        if (!proj.url) {
-            return
-        } else if (e.pointerType == "mouse") {
-            window.location = proj.url;
-        } else if (shield) {
-            window.location = proj.url;
-        } else {
-            shield = true;
-        }
-    }}
-    on:mouseenter={() => dispatch("hovered", index)}
-    on:mouseleave={()=>shield=false}
+    class="w-full group class0 relative transition-all h-[500px] max-sm:h-[230px] flex flex-row {!Boolean(proj.url) && 'hover:cursor-default'}"
+    on:click={window.location=proj.url}
 >
-    <div
-        class="absolute h-full group-hover:bg-black group-hover:bg-opacity-70 transition"
-    ></div>
-    {#if selected}
+    <!--<div
+        class="relative h-full group-hover:bg-black group-hover:bg-opacity-70 transition w-[100vw]"
+    ></div>-->
         <div
-            class="absolute h-full flex flex-col justify-center bottom-0 p-1 text-pretty text-white bg-black bg-opacity-50 w-full"
+            class="h-full w-full flex flex-col justify-center bottom-0 p-1 text-pretty text-white bg-black bg-opacity-50"
             in:fade={{duration:230,delay:300}}
             out:fade={{duration:100}}
         >
@@ -71,15 +58,25 @@
                 </p>
             {/if}
         </div>
-    {/if}
-    <!--<img {src} alt="{title}"/>-->
-    <div class="picture w-full h-full" style="--src:url({proj.src})"></div>
+    <!--<img {src} alt="{titleq}"/>-->
+        <div class="w-full picture">
+            <img
+                src={proj.src}
+                alt={proj.title}
+                style="--src: url('{proj.src}');"
+                class="w-full h-full object-cover"
+            />
+        </div>
+ 
 </button>
+   </div>
 
 <style>
     .picture {
         background-image: var(--src);
-        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
         background-position: center;
     }
+
 </style>

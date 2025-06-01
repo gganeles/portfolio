@@ -5,7 +5,10 @@
     import { fade } from "svelte/transition";
     import { onMount } from "svelte";
     import ChevronDownSmallSvgrepoCom from "$lib/chevron-down-small-svgrepo-com.svelte";
+    import ProjectScroll from "$lib/ProjectScroll.svelte";
 
+
+    
     function generateProject(
         title,
         src = "images/e44d5f00-6bed-4075-bb5c-c2f91fbe77b4.jpeg",
@@ -30,31 +33,33 @@
     let flash = false;
     let selectedInd = 0;
     let selectedInd2 = 0;
+    const cascadeParam = .5;
+    const timeshift = 1000; 
     onMount(() => {
         let flashId;
         setTimeout(() => {
             fadeTrig = true;
             clearInterval(flashId)
-        }, 3700);
+        }, 3700* cascadeParam-timeshift);
         setTimeout(() => {
             fadeTrig1 = true;
-        }, 5400);
+        }, 5400* cascadeParam-timeshift);
         setTimeout(() => {
             flashId = setInterval(()=>{
                 flash=!flash
             },500)
-        }, 2500);
+        }, 2500* cascadeParam-timeshift);
         setTimeout(() => {
             flashId = setInterval(()=>{
                 flash=!flash
             },500)
-        }, 5600);
+        }, 5600* cascadeParam-1.5*timeshift);
         setTimeout(()=>{
             fadeTrig2 = true;
-        }, 7400)
+        }, 7400* cascadeParam-1.5*timeshift);
         setTimeout(() => {
             nameTrig = true;
-        }, 2000);
+        }, .500* cascadeParam);
     });
 
     let projects = {
@@ -63,7 +68,7 @@
                 "CERN ATLAS' New Small Wheel",
                 "images/newSmallWheel.png",
                 "sTGC pad triggers algorithm",
-                "https://indico.cern.ch/event/354058/contributions/832493/attachments/701559/963190/NSW_ELX_overview_for_Feb2015review.pdf",
+                "https://cds.cern.ch/record/1958265/files/nppp273-1160.pdf",
                 "Python",
             ),
             generateProject(
@@ -143,7 +148,8 @@
             {#if nameTrig}
                 <div style="display: contents;" class="text-7xl drop-shadow-2xl max-md:text-4xl">
                     <span
-                        use:cascade={{ interval: 50 }}
+                        use:cascade={{ interval: 50 * cascadeParam }}
+                        
                         class=""
                     >
                         Gabriel Ganeles  
@@ -157,13 +163,13 @@
         <div transition:fade={{ duration: 500 }} class="">
             <h2 class="text-3xl p-2 gap-2 flex flex-wrap justify-center max-md:text-xl flex-row">
                 {#if fadeTrig}
-                    <span use:cascade={{ interval: 33 }}
-                        >Biomedical Engineering Student,
+                    <span use:cascade={{ interval: 33 * cascadeParam }}>
+                        Biomedical Engineering Student,
                     </span>
                 {/if}
                 {#if fadeTrig1}
-                    <span use:cascade={{ interval: 30 }}>
-                        Software Engineer
+                    <span use:cascade={{ interval: 30 * cascadeParam }}>
+                        Full Stack Developer
                     </span>
                 {/if}
                 {#if fadeTrig}
@@ -195,30 +201,11 @@
     </div>
     <div class="p-0 w-full max-w-[1000px]">
         <div class="p-2">
-            <div class="min-h-96">
-                <div class="pt-8 text-3xl">Programming</div>
-                <div class="pb-8">Click on a project to explore</div>
-                <div class="flex w-full gap-1 max-sm:gap-1 projs">
-                    {#each projects["Programming"] as proj, ind}
-                        <ProjectDisplay
-                            {proj}
-                            selected={ind == selectedInd}
-                            index={ind}
-                            on:hovered={(e) => (selectedInd = e.detail)}
-                        />
-                    {/each}
-                </div>
+            <div class='w-full'>
+                <ProjectScroll projects={projects["Programming"]}    title="Programming" subtitle="Click on Project to Learn More" scrollDeets={[3,1,6]}/>
             </div>
-            <div class="py-8 text-3xl">Design</div>
-            <div class="gap-1 flex w-full max-sm:gap-1 pb-10 projs">
-                {#each projects["Design"] as proj, ind}
-                    <ProjectDisplay
-                        {proj}
-                        selected={ind == selectedInd2}
-                        index={ind}
-                        on:hovered={(e) => (selectedInd2 = e.detail)}
-                    />
-                {/each}
+            <div class="w-full">
+                <ProjectScroll projects={projects['Design']} title="Design" scrollDeets={[2,1,5]}/>
             </div>
         </div>
     </div>
@@ -281,7 +268,7 @@
     }
 
     .projs {
-        overflow: hidden;
+        overflow-x: scroll;
     }
 
     .bg-thin {
