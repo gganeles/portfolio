@@ -7,7 +7,7 @@
     import ChevronDownSmallSvgrepoCom from "$lib/chevron-down-small-svgrepo-com.svelte";
     import ProjectScroll from "$lib/ProjectScroll.svelte";
 
-
+    $: console.log(dev ? "Running in development mode" : "Running in production mode");
     
     function generateProject(
         title,
@@ -18,7 +18,7 @@
         program,
     ) {
         return {
-            src: dev ? src : "../../../" + src,
+            src: dev ? src : "../../" + src,
             title,
             desc,
             url,
