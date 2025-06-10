@@ -1,7 +1,7 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
     import {fade} from "svelte/transition"
-
+    
     interface Project {
         url: string;
         title: string;
@@ -59,7 +59,7 @@
             {/if}
         </div>
     <!--<img {src} alt="{titleq}"/>-->
-        <div class="w-full picture">
+        <div class="w-full">
             <img
                 src={proj.src}
                 alt={proj.title}

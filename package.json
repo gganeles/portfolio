@@ -26,6 +26,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"svelte-infinite-scroll": "^2.0.1",
 		"tailwind-scrollbar-hide": "^4.0.0"
 	}
 }
