@@ -18,7 +18,7 @@
         program,
     ) {
         return {
-            src: dev ? src : "../../" + src,
+            src: dev ? src : src,
             title,
             desc,
             url,

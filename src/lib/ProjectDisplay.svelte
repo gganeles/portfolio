@@ -23,7 +23,7 @@
 
 <button
     class="w-full group class0 relative transition-all h-[500px] max-sm:h-[230px] flex flex-row {!Boolean(proj.url) && 'hover:cursor-default'}"
-    on:click={window.location=proj.url}
+    on:click={()=>window.location=proj.url}
 >
     <!--<div
         class="relative h-full group-hover:bg-black group-hover:bg-opacity-70 transition w-[100vw]"
@@ -63,7 +63,6 @@
             <img
                 src={proj.src}
                 alt={proj.title}
-                style="--src: url('{proj.src}');"
                 class="w-full h-full object-cover"
             />
         </div>
