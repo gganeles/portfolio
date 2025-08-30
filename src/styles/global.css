@@ -41,7 +41,7 @@
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(20.463% 0.00002 271.152);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
@@ -117,4 +117,13 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+#cvBtn:hover svg .animate-slide-right {
+  animation: slide-right .5s cubic-bezier(1, -.43, .68, .57) infinite alternate both;
+}
+
+@keyframes slide-right {
+  0% { transform: translateY(0); }
+  to { transform: translateY(1px); }
 }

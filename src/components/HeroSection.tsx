@@ -1,7 +1,9 @@
 import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
+import { FaWhatsapp } from 'react-icons/fa'
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
+import AnimatedIcon from "./ui/DownloadButton";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -41,14 +43,14 @@ export default function HeroSection() {
               variants={childVariants}
             >
               {personalInfo.name}{" "}
-              <span className="inline-block animate-pulse">✨</span>
             </motion.h1>
 
             <motion.p
               className="text-xl text-muted-foreground mb-6"
               variants={childVariants}
             >
-              Software Engineer 👨‍💻
+              <div>Biomedical Engineering Student</div>
+              <div>Full Stack Developer</div>
             </motion.p>
 
             <motion.div
@@ -61,7 +63,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
                 <MapPin className="h-4 w-4 mr-2" />
-                📍 {personalInfo.location}
+                {personalInfo.location}
               </motion.div>
 
               <motion.a
@@ -71,7 +73,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
                 <Mail className="h-4 w-4 mr-2" />
-                ✉️ {personalInfo.email}
+                {personalInfo.email}
               </motion.a>
 
               <motion.a
@@ -83,7 +85,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
                 <Github className="h-4 w-4 mr-2" />
-                🌟 GitHub
+                GitHub
               </motion.a>
 
               <motion.a
@@ -95,7 +97,19 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
                 <Linkedin className="h-4 w-4 mr-2" />
-                🔗 LinkedIn
+                LinkedIn
+              </motion.a>
+
+              <motion.a
+                href={`https://wa.me/qr/EWMOYZYAUGN6D1`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                variants={childVariants}
+                whileHover={{ scale: 1.05, color: "#4b5563" }}
+              >
+                <FaWhatsapp className="h-4 w-4 mr-2" />
+                WhatsApp
               </motion.a>
             </motion.div>
           </div>
@@ -107,11 +121,11 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
           >
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <img
                 src={personalInfo.profilePicture}
                 alt="Profile"
-                className="w-48 md:w-60 rounded-full relative ring-2 ring-purple-500/50"
+                className="w-48 md:w-60 rounded-full relative ring-2 ring-blue-500/50"
                 style={{ objectFit: "cover" }}
               />
             </div>
@@ -119,13 +133,36 @@ export default function HeroSection() {
         </motion.div>
 
         <MotionWrapper>
-          <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 backdrop-blur-sm backdrop-filter p-4 rounded-lg border border-purple-500/20 dark:border-purple-500/10 shadow-sm">
+          <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 backdrop-blur-sm backdrop-filter p-4 rounded-lg border border-purple-500/20 dark:border-purple-500/10 shadow-sm">
             <p className="text-muted-foreground pl-4 py-2 mb-4 relative">
-              <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
+              <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full"></span>
               {personalInfo.heroDescription}
             </p>
           </div>
         </MotionWrapper>
+
+        <div className="pt-10 flex justify-center">
+          <motion.a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="items-center hover:text-foreground transition-colors"
+            variants={childVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              var link = document.createElement("a");
+              link.download = "GabrielGanelesCV.pdf";
+              link.href = "CV.pdf";
+              link.click();
+              link.remove();
+            }}
+          >
+            <button id="cvBtn" className="svg relative cursor-pointer inline-flex items-center justify-center px-16 py-3 overflow-hidden font-medium transition duration-300 ease-out rounded-full shadow-md group hover:text-white bg-gradient-to-l from-cyan-500 to-blue-500">
+              <span className="relative pr-2">Download CV</span>
+              <AnimatedIcon width={30} height={30} />
+            </button>
+          </motion.a>
+        </div>
       </div>
     </section>
   );

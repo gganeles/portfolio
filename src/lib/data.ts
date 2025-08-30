@@ -1,15 +1,15 @@
 export const personalInfo = {
-  name: "Lorem Ipsum",
-  location: "Dolor Sit Amet",
-  email: "lorem@ipsum.com",
-  github: "https://github.com/loremipsum",
-  linkedin: "https://linkedin.com/in/loremipsum",
-  profilePicture: "/profile.jpeg",
+  name: "Gabriel Ganeles",
+  location: "Haifa, Israel",
+  email: "gabriel.ganeles@gmail.com",
+  github: "https://github.com/gganeles",
+  linkedin: "https://linkedin.com/in/gganeles",
+  profilePicture: "/profile.jpg",
   heroDescription:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "I am a fourth year Biomedical Engineering Student at Technion - Israel Institute of Technology. I'm passionate about software, mechanical, electrical and biomedical engineering and I strive to use my wide range of experience to create innovative hardware and software solutions. I'm excited to collaborate on novel and creative projects.",
 };
 
-export const workExperience = [
+export const workExperience = [ 
   {
     company: "Lorem Ipsum Corp",
     location: "Lorem City",
