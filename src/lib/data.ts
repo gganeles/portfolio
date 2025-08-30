@@ -1,3 +1,5 @@
+import { desc } from "framer-motion/client";
+
 export const personalInfo = {
   name: "Gabriel Ganeles",
   location: "Haifa, Israel",
@@ -11,41 +13,69 @@ export const personalInfo = {
 
 export const workExperience = [ 
   {
-    company: "Lorem Ipsum Corp",
-    location: "Lorem City",
-    position: "Lorem Engineer",
-    period: "Jan 2020 - Present",
+    company: "Technion BioMotion Lab",
+    location: "Haifa, IL",
+    position: "Software Engineer (Final Project for Degree)",
+    period: "Sep 2024 - Present",
     achievements: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
-      "Excepteur sint occaecat cupidatat non proident.",
-      "Sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.",
-    ],
+      "Developed software to assist the coach of the Israeli Olympic windsurfing team in efficiently reviewing athlete footage",
+      "Created an algorithm for real-time video-based horizon line detection",
+      "Automated identification and stitching of pumping sequences in windsurfing footage using Python"
+    ]
   },
   {
-    company: "Dolor Sit Amet",
-    location: "Ipsumville",
-    position: "Software Developer",
-    period: "Feb 2019 - Jan 2020",
+    company: "Formula Technion",
+    location: "Haifa, IL",
+    position: "Electrical Engineer",
+    period: "Aug 2023 - Present",
     achievements: [
-      "Morbi in sem quis dui placerat ornare.",
-      "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam.",
-    ],
+      "Implemented a CAN network to transmit data to the autonomous control unit of a Technion Formula electric car",
+      "Designed and built PCBs for sensor data acquisition and communication with the main processor",
+      "Engineered a low-cost multiplexing circuit enabling concurrent sensor readings from a single PCB",
+      "Coded the team’s public-facing website, improving visibility and outreach, attracting over 3k monthly visitors"
+    ]
   },
   {
-    company: "Consectetur Inc.",
-    location: "Adipiscing, Ipsum",
+    company: "Technion’s Experimental Particle Physics Group",
+    location: "Haifa, IL",
+    position: "Student Researcher",
+    period: "Sep 2023 - Jul 2024",
+    achievements: [
+      "Developed an algorithm to optimize detector overlap region selection for improved accuracy in CERN’s muon detector",
+      "Simulated muon interactions within ATLAS to study detector activation patterns"
+    ]
+  },
+  {
+    company: "Flinker Lab at NYU Langone",
+    location: "New York City, NY",
     position: "Intern",
-    period: "Jun 2018 - Feb 2019",
+    period: "Aug 2023 - Sep 2023",
     achievements: [
-      "Praesent dapibus, neque id cursus faucibus.",
-      "Fusce feugiat malesuada odio.",
-    ],
+      "Extracted features from the sEEG data of 50 patients to train an EEG-to-speech neural network (MATLAB)",
+      "Converted medical images (MRI and CT) into 3D brain surfaces to map electrode placements into brain regions"
+    ]
   },
-];
+  {
+    company: "Technion Rocketry Club",
+    location: "Haifa, IL",
+    position: "Mechanical Engineer",
+    period: "Sep 2022 - Jul 2023",
+    achievements: [
+      "Created a spring-based 3D printed parachute launcher for a hybrid solid-gas model rocket",
+      "Collaborated with propulsion and avionics teams to develop the rocket’s structural body"
+    ]
+  },
+  {
+    company: "Technion Automated Robotics Lab",
+    location: "Haifa, IL",
+    position: "Robotics Engineer",
+    period: "Jan 2021 - Jul 2023",
+    achievements: [
+      "Built a 3D printed robotic gripper for reliable handling of salmon fillets",
+      "Programmed an Arduino Nano in C++ to control motors and driver circuits"
+    ]
+  }
+]
 
 export const education = [
   {
@@ -61,48 +91,63 @@ export const education = [
     ],
   },
 ];
-export const skills = {
-  programmingLanguages: [
-    "LoremLang",
-    "IpsumScript",
-    "DolorLang",
-    "SitLang",
-    "AmetLang",
-    "ConsecteturLang",
-  ],
-  frontendDevelopment: [
-    "LoremJS",
-    "IpsumJS",
-    "Dolor Native",
-    "Sit UI",
-    "Amet CSS",
-    "HTML",
-    "CSS",
-  ],
-  backendDevelopment: ["LoremNode", "IpsumExpress"],
-  databaseAndStorage: ["LoremDB", "IpsumORM"],
-  cloudAndDevOps: ["LoremCloud"],
-  toolsAndServices: [
-    "LoremAuth",
-    "IpsumCMS",
-    "DolorAnalytics",
-    "SitValidator",
-    "AmetMonitor",
-    "ConsecteturPanel",
-    "AdipiscingTrigger",
-  ],
-};
+export const skills = [
+  {
+    category: "Programming Languages",
+    skills: [
+      "C",
+      "C++",
+      "Python",
+      "MATLAB",
+      "TypeScript",
+      "Linux"
+    ]
+  },
+  {
+    category: "Web Development",
+    skills: [
+      "HTML",
+      "CSS",
+      "React",
+      "Svelte",
+      "Tailwind",
+      "Node.js",
+      "Flask",
+      "Firebase Realtime Database"
+
+    ]
+  },
+  {
+    category: "3D Modeling",
+    skills: [
+      "Creo",
+      "SOLIDWORKS",
+      "Onshape",
+      "Blender",
+      "Rhino",
+      "Grasshopper"
+    ]
+  },
+  {
+    category: "Electronic Design Automation",
+    skills: [
+      "KiCad",
+      "Altium",
+      "LTSpice"
+    ]
+  }
+];
+
+
+
 
 export const projects = [
   {
-    title: "Lorem Ipsum Project",
-    github: "https://github.com/loremipsum/project",
+    title: "CERN ATLAS' New Small Wheel Julia Trigger",
+    github: "https://cds.cern.ch/record/1958265/files/nppp273-1160.pdf",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse.",
-      "Excepteur sint occaecat cupidatat non proident.",
+      "Developed an algorithm to optimize detector overlap region selection for improved accuracy in CERN’s muon detector.",
+      "Simulated muon interactions within ATLAS to study detector activation patterns.",
     ],
   },
   {
@@ -120,52 +165,17 @@ export const projects = [
 
 export const awards = [
   {
-    name: "Lorem Ipsum Award",
-    issuer: "Lorem Organization",
-    date: "Jan 2020",
-    type: "International",
+    name: "Technion Bio-Hack Hackathon",
+    issuer: "Technion Faculty of Biomedical Engineering",
+    date: "April 2025",
     position: "First Place",
+    desc: "Proposed a device to assist in the rapid prevention of cutaneous infection."
   },
   {
-    name: "Dolor Sit Amet Prize",
-    issuer: "Ipsum Foundation",
-    date: "Feb 2021",
-    type: "National",
-    position: "Runner-up",
-  },
-  {
-    name: "Consectetur Hackathon",
-    issuer: "Adipiscing Org",
-    date: "Mar 2022",
-    type: "National",
-    position: "Winner",
-  },
-  {
-    name: "Vestibulum Event",
-    issuer: "Vestibulum College",
-    date: "Apr 2022",
-    type: "National",
-    position: "First Prize",
-  },
-  {
-    name: "Curabitur Hackfest",
-    issuer: "Curabitur Institute",
-    date: "May 2022",
-    type: "National",
-    position: "Second Prize",
-  },
-  {
-    name: "Praesent Hacks",
-    issuer: "Praesent Group",
-    date: "Jun 2022",
-    type: "National",
-    position: "Second Runner-up",
-  },
-  {
-    name: "Fusce Hack",
-    issuer: "Fusce Club",
-    date: "Jul 2022",
-    type: "National",
-    position: "Most Impactful Hack",
+    name: "Nucleate Bio-Fense Hackathon",
+    issuer: 'Nucleate | DDR&D (מפא"ת) | Teva',
+    date: "April 2025",
+    position: "First Place",
+    desc: "Developed a novel solution to combat-based neck injuries."
   },
 ];

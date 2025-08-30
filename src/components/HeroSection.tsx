@@ -1,9 +1,11 @@
 import { personalInfo } from "@/lib/data";
-import { Mail, Github, MapPin, Linkedin } from "lucide-react";
-import { FaWhatsapp } from 'react-icons/fa'
+import { Mail, Github, MapPin } from "lucide-react";
+import { FaWhatsapp , FaLinkedinIn} from 'react-icons/fa'
+import { CiLinkedin } from "react-icons/ci";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 import AnimatedIcon from "./ui/DownloadButton";
+import { FaL } from "react-icons/fa6";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -96,7 +98,7 @@ export default function HeroSection() {
                 variants={childVariants}
                 whileHover={{ scale: 1.05, color: "#4b5563" }}
               >
-                <Linkedin className="h-4 w-4 mr-2" />
+                <FaLinkedinIn className="h-4 w-4 mr-2" />
                 LinkedIn
               </motion.a>
 
