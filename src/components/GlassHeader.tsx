@@ -18,6 +18,13 @@ export default function GlassHeader() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
+          <img
+            src={"/Logo.png"}
+            alt={personalInfo.name}
+            width={40}
+            height={40}
+            className="py-2 pl-1 pr-[11px]"
+          />
           {personalInfo.name}
         </motion.a>
 
