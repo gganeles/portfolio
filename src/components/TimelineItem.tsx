@@ -24,7 +24,7 @@ export default function TimelineItem({
       className="relative flex gap-6"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
+      transition={{ duration: 0.5, delay: .1}}
       viewport={{ once: true, margin: "-50px" }}
     >
       <div className="flex flex-col items-center">
@@ -36,7 +36,7 @@ export default function TimelineItem({
             type: "spring",
             stiffness: 300,
             damping: 15,
-            delay: index * 0.2 + 0.2,
+            delay: index * 0.1,
           }}
           viewport={{ once: true, margin: "-20px" }}
         />

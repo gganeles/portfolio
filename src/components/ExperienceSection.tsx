@@ -49,7 +49,7 @@ export default function ExperienceSection() {
                       className="text-muted-foreground relative pl-6"
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 * i }}
+                      transition={{ duration: 0.3, delay: .4+ 0.05 * i }}
                       viewport={{ once: true }}
                     >
                       {achievement}

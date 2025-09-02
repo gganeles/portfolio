@@ -79,15 +79,11 @@ export const workExperience = [
 
 export const education = [
   {
-    institution: "Lorem Ipsum University",
-    location: "Lorem City",
-    degree: "BSc Lorem Ipsum",
-    period: "2015 - 2019",
+    institution: "Technion - Israel Institute of Technology",
+    location: "Haifa, Israel",
+    degree: "BSc in Biomedical Engineering",
+    period: "2021 - Present",
     achievements: [
-      "President of Lorem Ipsum Club",
-      "Organized multiple lorem events",
-      "Represented university in national competitions.",
-      "Graduated with honors.",
     ],
   },
 ];
@@ -143,24 +139,29 @@ export const skills = [
 
 export const projects = [
   {
-    title: "CERN ATLAS' New Small Wheel Julia Trigger",
-    github: "https://cds.cern.ch/record/1958265/files/nppp273-1160.pdf",
+    title: "Shab-BOT",
+    try: 'https://wa.me/12038025238?text=!help',
+    github: "https://github.com/gganeles/shabBOT#readme-ov-file",
+    video: "/videos/shabBot.mp4",
+    poster: "/videos/shabBotPoster.png",
     description: [
-      "Developed an algorithm to optimize detector overlap region selection for improved accuracy in CERN’s muon detector.",
-      "Simulated muon interactions within ATLAS to study detector activation patterns.",
+      "Whatsapp bot written in Node.js",
+      "Facilitates easy organization of potluck shabbot meals",
+      "Users can quickly check when Shabbat starts in almost any city in the world",
+      "Allows users to set reminders, keep track of shopping lists, etc"
     ],
   },
   {
-    title: "Dolor Sit Amet App",
-    github: "https://github.com/loremipsum/dolorapp",
+    title: "Set & Other Games",
+    try: "https://set.gganeles.com",
+    video: "/videos/setgame.mp4",
+    poster: "/videos/setgamePoster.png",
     description: [
-      "Morbi in sem quis dui placerat ornare.",
-      "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam.",
-      "Praesent dapibus, neque id cursus faucibus.",
-      "Fusce feugiat malesuada odio.",
-      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.",
-    ],
+      "Website hosting 4 multiplayer card games",
+      "Front-end written in svelte",
+      "Uses a Firebase Realtime Database to enable realtime multiplayer gameplay"    ],
   },
+  
 ];
 
 export const awards = [
