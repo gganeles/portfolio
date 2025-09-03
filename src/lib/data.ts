@@ -6,6 +6,7 @@ export const personalInfo = {
   email: "gabriel.ganeles@gmail.com",
   github: "https://github.com/gganeles",
   linkedin: "https://linkedin.com/in/gganeles",
+  whatsapp: "https://wa.me/972545678901",
   profilePicture: "/profile.jpg",
   heroDescription:
     "I am a fourth year Biomedical Engineering Student at Technion - Israel Institute of Technology. I'm passionate about software, mechanical, electrical and biomedical engineering and I strive to use my wide range of experience to create innovative hardware and software solutions. I'm excited to collaborate on novel and creative projects.",
