@@ -5,16 +5,17 @@ import type { HTMLMotionProps } from "framer-motion";
 
 interface GlassCardProps extends HTMLMotionProps<"div"> {
   hoverEffect?: boolean;
+  hoverShadow?: boolean;
 }
 
 const GlassCard = React.forwardRef<HTMLDivElement, GlassCardProps>(
-  ({ className, hoverEffect = true, ...props }, ref) => {
+  ({ className, hoverEffect = true, hoverShadow = true, ...props }, ref) => {
     return (
       <motion.div
         ref={ref}
         className={cn(
           "rounded-lg border border-border/50 bg-background/80 backdrop-blur-md backdrop-filter shadow-sm dark:bg-card/30 dark:backdrop-blur-md",
-          hoverEffect &&
+          hoverShadow &&
             "hover:shadow-md transition-all duration-300 ease-in-out",
           className
         )}

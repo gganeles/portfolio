@@ -34,7 +34,7 @@ export default function ProjectsSection() {
         <div className="flex flex-col gap-6">
           {projects.map((project, index) => (
             <MotionWrapper key={project.title} delay={index * 0.2}>
-              <GlassCard className="group overflow-hidden dark:border-blue-500/10 h-full flex flex-col sm:flex-row">
+              <GlassCard className="group overflow-hidden dark:border-blue-500/10 h-full flex flex-col sm:flex-row" hoverEffect={false}>
                 <div className="flex flex-col w-full">
                   <CardHeader className="bg-gradient-to-r from-blue-500/5 to-cyan-500/5">
                     <CardTitle className="text-center md:text-left group-hover:text-blue-500 transition-colors duration-300">
@@ -59,7 +59,7 @@ export default function ProjectsSection() {
                   </CardContent>
                   <CardFooter className="flex flex-col justify-center md:justify-start items-center border-t border-border/30 bg-gradient-to-r from-blue-500/5 to-cyan-500/5">
                     <motion.a
-                      className="flex items-center text-sm text-muted-foreground cursor-pointer hover:text-blue-500 transition-colors group/link pt-4"
+                      className="flex items-center text-sm text-muted-foreground cursor-pointer hover:text-blue-500 transition-colors group/link"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       href={project.try}

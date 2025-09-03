@@ -9,6 +9,8 @@ export default function GlassHeader() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const sectionList = ["projects", "experience", "skills", "awards", "education"];
+
   return (
     <header className="sticky z-50 w-full backdrop-blur-md backdrop-filter bg-background/70 dark:bg-background/40 border-b border-border/40 supports-[backdrop-filter]:bg-background/60">
       <div className="container max-w-4xl mx-auto p-4 flex justify-between items-center">
@@ -30,22 +32,21 @@ export default function GlassHeader() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-          {["experience", "skills", "projects", "awards", "education"].map(
-            (item, index) => (
-              <motion.a
-                key={item}
-                href={`#${item}`}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
+          {sectionList.map((item, index) => (
+            <motion.a
+              key={item}
+              href={`#${item}`}
+              className="transition-colors hover:text-foreground/80 text-foreground/60"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2, delay: index * 0.1 }}
+                transition={{ duration: 0.2, delay: 0 }}
                 whileHover={{ y: -2 }}
               >
-                {item === "experience" && ""}
-                {item === "skills" && ""}
-                {item === "projects" && ""}
-                {item === "awards" && ""}
-                {item === "education" && ""}
+                {/* {item === "experience"}
+                {item === "skills"}
+                {item === "projects"}
+                {item === "awards"}
+                {item === "education"} */}
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </motion.a>
             )
@@ -78,7 +79,7 @@ export default function GlassHeader() {
             transition={{ duration: 0.3 }}
           >
             <nav className="flex flex-col space-y-4 text-sm font-medium">
-              {["experience", "skills", "projects", "awards", "education"].map(
+              {sectionList.map(
                 (item, index) => (
                   <motion.a
                     key={item}
@@ -89,9 +90,9 @@ export default function GlassHeader() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.2, delay: index * 0.1 }}
                   >
+                    {item === "projects"}
                     {item === "experience"}
                     {item === "skills"}
-                    {item === "projects"}
                     {item === "awards"}
                     {item === "education"}
                     {item.charAt(0).toUpperCase() + item.slice(1)}
