@@ -11,6 +11,7 @@ export default function GlassHeader() {
 
   const sectionList = ["projects", "experience", "skills", "awards", "education"];
 
+
   return (
     <header className="sticky z-50 w-full backdrop-blur-md backdrop-filter bg-background/70 dark:bg-background/40 border-b border-border/40 supports-[backdrop-filter]:bg-background/60">
       <div className="container max-w-4xl mx-auto p-4 flex justify-between items-center">
@@ -25,6 +26,7 @@ export default function GlassHeader() {
             alt={personalInfo.name}
             width={40}
             height={40}
+            loading="eager"
             className="py-2 pl-1 pr-[11px]"
           />
           {personalInfo.name}

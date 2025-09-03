@@ -31,7 +31,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden">
+    <section className="py-16 md:pt-24 md:pb-16 relative overflow-hidden">
       <div className="container max-w-4xl mx-auto px-6 md:px-4 relative z-10">
         <motion.div
           className="flex flex-col md:flex-row md:items-center justify-between mb-8"
@@ -103,7 +103,7 @@ export default function HeroSection() {
               </motion.a>
 
               <motion.a
-                href={`https://wa.me/qr/EWMOYZYAUGN6D1`}
+                href={personalInfo.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -144,10 +144,8 @@ export default function HeroSection() {
         </MotionWrapper>
 
         <div className="pt-10 flex justify-center">
-          <motion.a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="items-center hover:text-foreground transition-colors"
+          <motion.div
+            className="items-center cursor-pointer hover:text-foreground transition-colors"
             variants={childVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -158,12 +156,13 @@ export default function HeroSection() {
               link.click();
               link.remove();
             }}
+            aria-label="Download CV"
           >
             <button id="cvBtn" className="svg relative cursor-pointer inline-flex items-center justify-center px-16 py-3 overflow-hidden font-medium transition duration-300 ease-out rounded-full shadow-md group hover:text-white bg-gradient-to-l from-cyan-500 to-blue-500">
               <span className="relative pr-2">Download CV</span>
               <AnimatedIcon width={30} height={30} />
             </button>
-          </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>
