@@ -47,13 +47,13 @@ export default function HeroSection() {
               {personalInfo.name}{" "}
             </motion.h1>
 
-            <motion.p
+            <motion.div
               className="text-xl text-muted-foreground mb-6"
               variants={childVariants}
             >
               <div>Biomedical Engineering Student</div>
               <div>Full Stack Developer</div>
-            </motion.p>
+            </motion.div>
 
             <motion.div
               className="flex flex-col gap-2 items-center md:items-start"

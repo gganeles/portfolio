@@ -22,7 +22,7 @@ export default function GlassHeader() {
           whileTap={{ scale: 0.95 }}
         >
           <img
-            src={"/Logo.png"}
+            src={"/Logo.webp"}
             alt={personalInfo.name}
             width={40}
             height={40}
