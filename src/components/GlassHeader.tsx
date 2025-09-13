@@ -61,7 +61,6 @@ export default function GlassHeader() {
           {/* Mobile Menu Button */}
           <motion.button
             className="md:hidden p-2 text-foreground"
-            onClick={toggleMenu}
             aria-label="Toggle menu"
             whileTap={{ scale: 0.95 }}
           >
