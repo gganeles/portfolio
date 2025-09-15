@@ -40,7 +40,7 @@ export const workExperience = [
     position: "Student Researcher",
     period: "Sep 2023 - Jul 2024",
     achievements: [
-      "Developed an algorithm to optimize detector overlap region selection for improved accuracy in CERN’s muon detector",
+      "Developed an algorithm to optimize detector overlap region selection for improved accuracy in Large Hadron Collider's muon detector",
       "Simulated muon interactions within ATLAS to study detector activation patterns"
     ]
   },
@@ -95,7 +95,9 @@ export const skills = [
       "Python",
       "MATLAB",
       "TypeScript",
-      "Linux"
+      "Linux",
+      "ROS2",
+      "Git"
     ]
   },
   {
@@ -109,7 +111,6 @@ export const skills = [
       "Node.js",
       "Flask",
       "Firebase Realtime Database"
-
     ]
   },
   {

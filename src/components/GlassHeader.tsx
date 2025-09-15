@@ -3,6 +3,7 @@ import { personalInfo } from "@/lib/data";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { navigate } from "astro/virtual-modules/transitions-router.js";
 
 export default function GlassHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,6 +61,7 @@ export default function GlassHeader() {
 
           {/* Mobile Menu Button */}
           <motion.button
+            onClick={toggleMenu}
             className="md:hidden p-2 text-foreground"
             aria-label="Toggle menu"
             whileTap={{ scale: 0.95 }}
@@ -85,8 +87,11 @@ export default function GlassHeader() {
                   <motion.a
                     key={item}
                     href={`#${item}`}
+                    // onClick={() => {toggleMenu(); 
+                    //   const section = document.getElementById(item)
+                    //   console.log(section)
+                    //   section?.scrollIntoView();}}
                     className="transition-colors hover:text-foreground/80 text-foreground/60 py-2"
-                    onClick={toggleMenu}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.2, delay: index * 0.1 }}
