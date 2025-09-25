@@ -5,6 +5,29 @@ import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 
 export default function ExperienceSection() {
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.4,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section
       id="experience"
@@ -20,7 +43,7 @@ export default function ExperienceSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-            <Briefcase className="h-6 w-6" />
+              <Briefcase className="h-6 w-6" />
             </motion.span>{" "}
             Experience
           </h2>
@@ -33,7 +56,7 @@ export default function ExperienceSection() {
               subtitle={`${job.location}`}
               date={`${job.period}`}
               isLast={index === workExperience.length - 1}
-              index={index}
+              //index={index}
             >
               <motion.div
                 className="mt-3 p-4 bg-background/80 backdrop-blur-sm backdrop-filter rounded-lg border border-blue-500/20 dark:bg-card/10 dark:border-blue-500/10 shadow-sm"
@@ -42,20 +65,23 @@ export default function ExperienceSection() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <ul className="list-disc ml-4 space-y-2 text-sm">
+                <motion.ul
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="list-disc ml-4 space-y-2 text-sm">
                   {job.achievements.map((achievement, i) => (
                     <motion.li
                       key={i}
+                      variants={childVariants}
                       className="text-muted-foreground relative pl-6"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: .4+ 0.05 * i }}
                       viewport={{ once: true }}
                     >
                       {achievement}
                     </motion.li>
                   ))}
-                </ul>
+                </motion.ul>
               </motion.div>
             </TimelineItem>
           ))}

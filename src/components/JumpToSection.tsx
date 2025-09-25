@@ -13,27 +13,27 @@ export default function JumpToSection({ ...props }) {
         "education"
     ]
 
-      const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
-      },
-    },
-  };
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.1,
+            },
+        },
+    };
 
-  const childVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
+    const childVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5,
+            },
+        },
+    };
 
     return (
         <div className="md:hidden">
@@ -60,7 +60,7 @@ export default function JumpToSection({ ...props }) {
                                         key={el}
                                         href={`#${el}`}
                                         className="w-96 px-4 py-2 rounded-md bg-muted/80 text-muted-foreground hover:bg-blue-500/10 hover:text-blue-500 transition-colors font-medium text-center border border-blue-500/10 shadow-sm"
-                                        whileHover={{ scale: 1.02 , y:-1 }}
+                                        whileHover={{ scale: 1.02, y: -1 }}
                                         whileTap={{ scale: 0.98 }}
                                     >
                                         {el.charAt(0).toUpperCase() + el.slice(1)}
