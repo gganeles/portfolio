@@ -45,10 +45,17 @@ export default function JumpToSection({ ...props }) {
                         animate="visible"
                         variants={{hidden:{opacity:0, y:0}}}
                     > */}
-                    <GlassCard
-                        hoverEffect={false}
-                        className="p-4 flex flex-col w-108 gap-2 border-blue-500/10 bg-gradient-to-r from-blue-500/5 to-cyan-500/5">
-                        <h3 className="text-lg font-semibold mb-2 text-center text-blue-500">Jump to Section</h3>
+                    <div
+                        className="p-4 flex bg-opacity-0 flex-col w-108 gap-2 
+                        " 
+                        //border-blue-500/10 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"
+                        >
+                        <h3 className="text-lg 
+                        font-semibold mb-2 
+                        text-center 
+                        text-secondary-foreground">
+                            Jump to Section
+                        </h3>
                         <div >
                             <motion.div
                                 className="flex flex-col gap-2 items-center"
@@ -59,7 +66,7 @@ export default function JumpToSection({ ...props }) {
                                         variants={childVariants}
                                         key={el}
                                         href={`#${el}`}
-                                        className="w-96 px-4 py-2 rounded-md bg-muted/80 text-muted-foreground hover:bg-blue-500/10 hover:text-blue-500 transition-colors font-medium text-center border border-blue-500/10 shadow-sm"
+                                        className="w-96 px-4 py-2 rounded-full bg-muted/80 text-muted-foreground hover:bg-blue-500/10 hover:text-blue-500 transition-colors font-medium text-center border border-blue-500/10 shadow-sm"
                                         whileHover={{ scale: 1.02, y: -1 }}
                                         whileTap={{ scale: 0.98 }}
                                     >
@@ -68,7 +75,7 @@ export default function JumpToSection({ ...props }) {
                                 ))}
                             </motion.div>
                         </div>
-                    </GlassCard>
+                    </div>
                     {/* </motion.div> */}
                 </MotionWrapper>
             </div>

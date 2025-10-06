@@ -37,7 +37,7 @@ export default function ProjectsSection() {
               <GlassCard className="group overflow-hidden dark:border-blue-500/10 h-full flex flex-col sm:flex-row" hoverEffect={false}>
                 <div className="flex flex-col w-full">
                   <CardHeader className="bg-gradient-to-r from-blue-500/5 to-cyan-500/5">
-                    <CardTitle className="text-center md:text-left group-hover:text-blue-500 transition-colors duration-300">
+                    <CardTitle className="text-center md:text-left transition-colors duration-300">
                       {project.title}
                     </CardTitle>
                   </CardHeader>

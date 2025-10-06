@@ -8,18 +8,17 @@ interface MotionWrapperProps extends MotionProps {
 }
 
 // Default animations for sections
-const defaultAnimations = {
+const defaultAnimations = (custom: number = 0) => ({
   hidden: { opacity: 0, y: 20 },
-  visible: (delay: number = 0) => ({
+  visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      delay: delay,
-      ease: "easeOut",
+      delay: custom,
     },
-  }),
-};
+  },
+});
 
 export default function MotionWrapper({
   children,
@@ -31,8 +30,7 @@ export default function MotionWrapper({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      variants={defaultAnimations}
-      custom={delay}
+      variants={defaultAnimations(delay)}
       {...props}
     >
       {children}
