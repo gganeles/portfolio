@@ -60,7 +60,7 @@ export default function ProjectVideo(props: {
                                     setAspectRatio(e.currentTarget.videoWidth / e.currentTarget.videoHeight);
                                 }}>
                                 <source src={props.src} />
-                                {props.src === "/videos/set2.mkv" && (
+                                {props.src === "/videos/set2.mp4" && (
                                     <source src="/videos/set2.webm" />
                                 )}
                             </video>
@@ -112,7 +112,7 @@ export default function ProjectVideo(props: {
                                         }}
                                     >
                                         <source src={props.src} />
-                                        {props.src === "/videos/set2.mkv" && (
+                                        {props.src === "/videos/set2.mp4" && (
                                             <source src="/videos/set2.webm" />
                                         )}
                                     </video>

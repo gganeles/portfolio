@@ -154,7 +154,7 @@ export const projects = [
         try: ["https://set.gganeles.com", "https://set2.gganeles.com"],
         tryTitles: ["Try v1", "Try v2"],
         github: "https://github.com/gganeles/rustSet",
-        video: ["/videos/setgame.mp4", "/videos/set2.mkv"],
+        video: ["/videos/setgame.mp4", "/videos/set2.mp4"],
         videoTitles: ["v1", "v2"],
         smallVid: false,
         poster: "/videos/setgamePoster.png",
