@@ -47,7 +47,11 @@ export default function SkillsSection() {
           viewport={{ once: true, margin: "-50px" }}
         >
           {skills.map((category) => (
-            <SkillCard key={category.category} skillName={category.category} skills={category.skills} />
+            <SkillCard
+              key={category.category}
+              skillName={category.category}
+              skills={category.skills}
+            />
           ))}
         </motion.div>
       </div>
