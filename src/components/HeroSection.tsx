@@ -54,8 +54,9 @@ export default function HeroSection({
                             className="text-xl text-muted-foreground mb-6"
                             variants={childVariants}
                         >
-                            <div>Biomedical Engineering Student</div>
-                            <div>Full Stack Developer</div>
+                            {personalInfo.currentRoles.map((role, index) => (
+                                <div key={index}>{role}</div>
+                            ))}
                         </motion.div>
 
                         <motion.div

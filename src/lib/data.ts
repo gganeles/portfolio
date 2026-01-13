@@ -1,5 +1,9 @@
 export const personalInfo = {
     name: "Gabriel Ganeles",
+    currentRoles: [
+        "Biomedical Engineering Student at Technion",
+        "Software Engineer",
+    ],
     location: "Haifa, Israel",
     email: "gabriel.ganeles@gmail.com",
     github: "https://github.com/gganeles",
@@ -14,7 +18,7 @@ export const workExperience = [
     {
         company: "Formula Technion",
         location: "Haifa, IL",
-        position: "Engineer",
+        position: "Autonomous Team Co-Lead",
         period: "Aug 2023 - Present",
         achievements: [
             "Co-led a 14-member team to design and implement the autonomous systems for a Formula-style race car",

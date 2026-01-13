@@ -58,8 +58,12 @@ export default function ProjectVideo(props: {
                                 className="w-full h-full object-cover block"
                                 onLoadedMetadata={(e) => {
                                     setAspectRatio(e.currentTarget.videoWidth / e.currentTarget.videoHeight);
-                                }}
-                            />
+                                }}>
+                                <source src={props.src} />
+                                {props.src === "/videos/set2.mkv" && (
+                                    <source src="/videos/set2.webm" />
+                                )}
+                            </video>
                             {props.title && (
                                 <div className="absolute bottom-2 left-2 pointer-events-none">
                                     <div className="bg-blue-400/90 text-[var(--background)] px-2 py-1 rounded text-xs font-semibold shadow-sm backdrop-blur-sm border border-blue-300/20">
@@ -93,28 +97,31 @@ export default function ProjectVideo(props: {
                                     transition={transition}
                                     className="rounded-lg shadow-2xl overflow-hidden relative pointer-events-auto"
                                     style={{
-                                        width: `min(90vw, calc(90vh * ${aspectRatio}))`,
-                                        height: `min(90vh, calc(90vw / ${aspectRatio}))`,
+                                        width: `min(80vw, calc(80vh * ${aspectRatio}))`,
+                                        height: `min(80vh, calc(80vw / ${aspectRatio}))`,
                                     }}
                                 >
                                     <video
-                                        src={props.src}
                                         controls
                                         autoPlay
                                         playsInline
+                                        muted
                                         className="w-full h-full block"
                                         style={{
                                             objectFit: "cover",
                                         }}
-                                    />
+                                    >
+                                        <source src={props.src} />
+                                        {props.src === "/videos/set2.mkv" && (
+                                            <source src="/videos/set2.webm" />
+                                        )}
+                                    </video>
                                 </motion.div>
                                 <button
                                     onClick={() => setIsBig(false)}
-                                    className="absolute -top-12 right-0 p-2 text-white/70 hover:text-white transition-colors"
+                                    className="absolute -top-12 right-0 p-2 bg-transparent transition-colors"
                                     aria-label="Close video"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                                </button>
+                                ></button>
                             </div>
                         </div>
                     )}
