@@ -1,0 +1,34 @@
+{
+    "name": "gabe-portfolio",
+    "type": "module",
+    "scripts": {
+        "dev": "vinxi dev",
+        "build": "vinxi build",
+        "start": "vinxi start",
+        "version": "vinxi version"
+    },
+    "dependencies": {
+        "@motionone/solid": "^10.16.4",
+        "@solidjs/meta": "^0.29.4",
+        "@solidjs/router": "^0.15.0",
+        "@solidjs/start": "^1.1.0",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "lucide-solid": "^0.562.0",
+        "react-icons": "^5.5.0",
+        "solid-icons": "^1.1.0",
+        "solid-js": "^1.9.5",
+        "tailwind-merge": "^3.4.0",
+        "trig-js": "^4.2.0",
+        "vinxi": "^0.5.7"
+    },
+    "engines": {
+        "node": ">=22"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.1.18",
+        "autoprefixer": "^10.4.23",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^4.1.18"
+    }
+}

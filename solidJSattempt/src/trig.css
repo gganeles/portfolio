@@ -1,0 +1,122 @@
+:root {
+    --trig-delay: 0s;
+    --trig-duration: 0.8s;
+    --trig-ease: ease;
+}
+
+/* Base class for elements that will be animated */
+[data-trig] {
+    /* No default transition to avoid conflicts with Tailwind or other interactions */
+}
+
+/* Keyframes for different animation types */
+@keyframes trigFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes trigFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes trigFadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes trigFadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes trigFadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes trigZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Initial states (hidden) */
+.trig-fade-up,
+.trig-fade-in,
+.trig-fade-left,
+.trig-fade-right,
+.trig-fade-down,
+.trig-zoom-in {
+    opacity: 0;
+}
+
+/* Triggered states (animate to visible) */
+.trig-fade-up.trig {
+    animation: trigFadeUp var(--trig-duration) var(--trig-ease) forwards;
+    animation-delay: var(--trig-delay);
+}
+
+.trig-fade-in.trig {
+    animation: trigFadeIn var(--trig-duration) var(--trig-ease) forwards;
+    animation-delay: var(--trig-delay);
+}
+
+.trig-fade-left.trig {
+    animation: trigFadeLeft var(--trig-duration) var(--trig-ease) forwards;
+    animation-delay: var(--trig-delay);
+}
+
+.trig-fade-right.trig {
+    animation: trigFadeRight var(--trig-duration) var(--trig-ease) forwards;
+    animation-delay: var(--trig-delay);
+}
+
+.trig-fade-down.trig {
+    animation: trigFadeDown var(--trig-duration) var(--trig-ease) forwards;
+    animation-delay: var(--trig-delay);
+}
+
+.trig-zoom-in.trig {
+    animation: trigZoomIn var(--trig-duration) var(--trig-ease) forwards;
+    animation-delay: var(--trig-delay);
+}
