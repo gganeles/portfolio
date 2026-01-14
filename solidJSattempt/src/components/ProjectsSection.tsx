@@ -73,7 +73,7 @@ export default function ProjectsSection() {
                                                 >
                                                     <For each={(project.description as string).split("\n")}>
                                                         {(text, index) => (
-                                                            <div class="pb-3 trig-fade-left" data-trig style={{ "--trig-delay": `${index() * 200}ms` }}>{text}</div>
+                                                            <div class="pb-3 trig-fade-left" data-trig style={{ "--trig-delay": `${index() * 300}ms` }}>{text}</div>
                                                         )}
                                                     </For>
                                                 </div>

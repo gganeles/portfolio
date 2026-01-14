@@ -45,7 +45,7 @@ export default function App() {
                         `}
                     />
                     <Title>Gabriel Ganeles - Portfolio</Title>
-                    <div class="fixed inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(80,110,136,0.3),rgba(255,255,255,0))]" />
+                    <div class="fixed inset-0 -z-10 h-full w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(80,110,136,0.3),rgba(255,255,255,0))]" />
                     <Suspense>{props.children}</Suspense>
                 </MetaProvider>
             )}
