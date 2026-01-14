@@ -12,7 +12,7 @@ const Footer = lazy(() => import("~/components/Footer"));
 
 export default function Home() {
     return (
-        <div class="min-h-screen bg-background text-foreground">
+        <div class="min-h-screen text-foreground">
             <GlassHeader />
             <main class="min-h-screen">
                 <HeroSection>
