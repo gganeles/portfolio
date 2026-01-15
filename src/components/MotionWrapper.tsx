@@ -1,39 +1,23 @@
-import React from "react";
-import { motion } from "framer-motion";
-import type { MotionProps } from "framer-motion";
+import { type Component, type JSX, splitProps } from "solid-js";
+import { cn } from "~/lib/utils";
 
-interface MotionWrapperProps extends MotionProps {
-  children: React.ReactNode;
-  delay?: number;
+interface MotionWrapperProps extends JSX.HTMLAttributes<HTMLDivElement> {
+    delay?: number;
 }
 
-// Default animations for sections
-const defaultAnimations = (custom: number = 0) => ({
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      delay: custom,
-    },
-  },
-});
+const MotionWrapper: Component<MotionWrapperProps> = (props) => {
+    const [local, rest] = splitProps(props, ["class", "children", "delay"]);
 
-export default function MotionWrapper({
-  children,
-  delay = 0,
-  ...props
-}: MotionWrapperProps) {
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={defaultAnimations(delay)}
-      {...props}
-    >
-      {children}
-    </motion.div>
-  );
-}
+    return (
+        <div
+            class={cn(local.class, "trig-fade-up")}
+            data-trig
+            style={{ "--trig-delay": `${local.delay || 0}ms` }}
+            {...rest}
+        >
+            {local.children}
+        </div>
+    );
+};
+
+export default MotionWrapper;

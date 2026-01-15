@@ -1,76 +1,55 @@
-import * as React from "react";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { type Component, type JSX, Show } from "solid-js";
+import { cn } from "~/lib/utils";
 
 interface TimelineItemProps {
-  title: string;
-  subtitle: string;
-  date: string;
-  isLast?: boolean;
-  index?: number;
-  children?: React.ReactNode;
+    title: string;
+    subtitle: string;
+    date: string;
+    isLast?: boolean;
+    index?: number;
+    children?: JSX.Element;
 }
 
-export default function TimelineItem({
-  title,
-  subtitle,
-  date,
-  isLast = false,
-  index = 0,
-  children,
-}: TimelineItemProps) {
-  return (
-    <motion.div
-      className="relative flex gap-6"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: .1}}
-      viewport={{ once: true, margin: "-50px" }}
-    >
-      <div className="flex flex-col items-center">
-        <motion.div
-          className="flex h-[18px] w-[18px] rounded-full border border-blue-500/50 bg-background dark:bg-muted z-10"
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 300,
-            damping: 15,
-            delay: index * 0.1,
-          }}
-          viewport={{ once: true, margin: "-20px" }}
-        />
-        {!isLast && (
-          <motion.div
-            className="w-px grow bg-gradient-to-b from-blue-500/50 to-cyan-500/30 dark:from-blue-500/30 dark:to-cyan-500/10"
-            initial={{ height: 0 }}
-            whileInView={{ height: "100%" }}
-            transition={{ duration: 0.8, delay: index * 0.2 + 0.3 }}
-            viewport={{ once: true, margin: "-50px" }}
-          />
-        )}
-      </div>
-      <div className={cn("pb-8", isLast ? "pb-0" : "")}>
-        <motion.div
-          className="flex flex-col gap-0.5"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
-          viewport={{ once: true, margin: "-50px" }}
+const TimelineItem: Component<TimelineItemProps> = (props) => {
+    return (
+        <div
+            class="relative flex gap-6 trig-fade-up"
+            data-trig
+            style={{ "--trig-delay": `${(props.index || 0) * 100}ms` }}
         >
-          <h3 className="font-medium">{title}</h3>
-          <p className="text-sm text-muted-foreground">{subtitle}</p>
-          <p className="text-xs text-muted-foreground/70 mb-2">{date}</p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {children}
-        </motion.div>
-      </div>
-    </motion.div>
-  );
-}
+            <div class="flex flex-col items-center">
+                <div
+                    class="flex h-[18px] w-[18px] rounded-full border border-blue-500/50 bg-background dark:bg-muted z-10 trig-zoom-in"
+                    data-trig
+                    style={{ "--trig-delay": `${(props.index || 0) * 100}ms` }}
+                />
+                <Show when={!props.isLast}>
+                    <div
+                        class="w-px grow bg-gradient-to-b from-blue-500/50 to-cyan-500/30 dark:from-blue-500/30 dark:to-cyan-500/10 trig-fade-down"
+                        data-trig
+                    />
+                </Show>
+            </div>
+            <div class={cn("pb-8", props.isLast ? "pb-0" : "")}>
+                <div
+                    class="flex flex-col gap-0.5 trig-fade-right"
+                    data-trig
+                    style={{ "--trig-delay": `${(props.index || 0) * 100 + 100}ms` }}
+                >
+                    <h3 class="font-medium">{props.title}</h3>
+                    <p class="text-sm text-muted-foreground">{props.subtitle}</p>
+                    <p class="text-xs text-muted-foreground/70 mb-2">{props.date}</p>
+                </div>
+                <div
+                    class="trig-fade-in"
+                    data-trig
+                    style={{ "--trig-delay": `${(props.index || 0) * 100 + 200}ms` }}
+                >
+                    {props.children}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default TimelineItem;
