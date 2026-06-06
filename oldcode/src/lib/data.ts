@@ -11,7 +11,7 @@ export const personalInfo = {
     whatsapp: "https://wa.me/972587120601",
     profilePicture: "/profile.webp",
     heroDescription:
-        "I am a fourth year Biomedical Engineering Student at Technion - Israel Institute of Technology. I'm passionate about software, mechanical, electrical and biomedical engineering and I strive to use my wide range of experience to create innovative hardware and software solutions. I'm excited to collaborate on novel and creative projects.",
+        "I have nearly completed my Biomedical Engineering degree at Technion - Israel Institute of Technology. I'm have a wide range of prior experience (software, mechanical, electrical and biomedical engineering), and I am always eager to use my skills to create physical, electronic, and software solutions. I'm excited to collaborate on novel and creative projects.",
 };
 
 export const workExperience = [
@@ -137,6 +137,18 @@ export const skills = [
     },
 ];
 
+/*"During my time at Technion, my friends and I would plan Shabbat meals together almost every week.\nFiguring out what everyone was bringing was always a challenge to co-ordinate.\nTo address this, I wrote a command-driven bot that interfaces over Whatsapp.\nOver time, this turned into a fully fledged Whatsapp Bot, complete with a reminder system, scheduled messages, and a quick way to find Shabbat Candle lighting times for 100,000+ cities.\nThis was originally written using whatsapp-web.js, but in order to speed it up and reduce memory footprint, I ported it to @whiskeysockets/Baileys, then to Golang's Whatsmeow."
+
+In my second year of Techion, I reignited an old passion for a game called SET when I learned that one of my friends also loved it.
+    In order to play more conveniently, I figured I should make a website where we could play set with each other.
+    Although alternatives exist, I found they could not keep up with the fast pace my friends and I preferred.
+    In order to build my vision without paying a single cent, I implimented the game using Firebase's Realtime Database, thereby avoiding server costs. The site itself is written in Svelte, hosted for free on Firebase.
+    This implimentation worked well, and I ultimately used the same system to build 3 other games: Memory, Anagrams (snatch), and Skull.
+    However, there was a bug with this implimentation, specifically for quick games such as set. When two people find sets simultaneously, this system fails. The database doesn't send data to the clients fast enough to appropriately check both sets, and therefore they both get accepted.
+    To address this bug and refine the player experience, I ultimately ported my previous code to a new app, with a frontend written in SolidJS and a backend written in Rust.
+
+*/
+
 export const projects = [
     {
         title: "Shab-BOT",
@@ -147,7 +159,7 @@ export const projects = [
         smallVid: true,
         poster: "/videos/shabBotPoster.png",
         description:
-            "During my time at Technion, my friends and I would plan Shabbat meals together almost every week.\nFiguring out what everyone was bringing was always a challenge to co-ordinate.\nTo address this, I wrote a command-driven bot that interfaces over Whatsapp.\nOver time, this turned into a fully fledged Whatsapp Bot, complete with a reminder system, scheduled messages, and a quick way to find Shabbat Candle lighting times for 100,000+ cities.\nThis was originally written using whatsapp-web.js, but in order to speed it up and reduce memory footprint, I ported it to @whiskeysockets/Baileys, then to Golang's Whatsmeow.",
+            "This is a Whatsapp bot I created to help my friends and I coordinate our Shabbat meals. It has a variety of features, including a reminder system, scheduled messages, and a quick way to find Shabbat Candle lighting times for 100,000+ cities.",
     },
     {
         title: "Gabe's Games Corner",
@@ -158,14 +170,14 @@ export const projects = [
         videoTitles: ["v1", "v2"],
         smallVid: false,
         poster: "/videos/setgamePoster.png",
-        description: `In my second year of Techion, I reignited an old passion for a game called SET when I learned that one of my friends also loved it.
-    In order to play more conveniently, I figured I should make a website where we could play set with each other.
-    Although alternatives exist, I found they could not keep up with the fast pace my friends and I preferred.
-    In order to build my vision without paying a single cent, I implimented the game using Firebase's Realtime Database, thereby avoiding server costs. The site itself is written in Svelte, hosted for free on Firebase.
-    This implimentation worked well, and I ultimately used the same system to build 3 other games: Memory, Anagrams (snatch), and Skull.
-    However, there was a bug with this implimentation, specifically for quick games such as set. When two people find sets simultaneously, this system fails. The database doesn't send data to the clients fast enough to appropriately check both sets, and therefore they both get accepted.
-    To address this bug and refine the player experience, I ultimately ported my previous code to a new app, with a frontend written in SolidJS and a backend written in Rust.`,
+        description: `My favorite games, hand coded so i can play them fast with my friends with extremely low latency.`,
     },
+    {
+        title: "Technion Formula Autonomous Systems",
+        try: ["https://formulatechnion.com/"],
+        tryTitles: ["Learn More"],
+        github: ""
+    }
 ];
 
 export const awards = [

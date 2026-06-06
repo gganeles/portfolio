@@ -139,6 +139,42 @@ export const skills = [
 
 export const projects = [
     {
+        title: "Technion Formula Autonomous System",
+        try: ["https://formulatechnion.ac.il/"],
+        tryTitles: ["Visit Team Website"],
+        github: "",
+        video: "/videos/formulaTech.mp4",
+        smallVid: false,
+        poster: "/videos/formulaTechPoster.png",
+        description:
+            `As the co-lead of the autonomous team, I spearheaded the design and implementation of the autonomous systems for a Formula-style race car. 
+Together, we developed a full perception to control pipeline, with custom PCBs to control the car's actuators and read sensor data.
+I personally oversaw the design of all of the relevant electrical systems, the SLAM algorithm, and the path planning.
+Additionally, I coded the team's public-facing website, significantly enhancing our visibility and outreach.`,
+    },
+    {
+        title: "Windsurfing Video Analysis Software",
+        try: [],
+        tryTitles: [],
+        github: "https://github.com/gganeles/windsurfing",
+        video: "/videos/windsurfing.mp4",
+        smallVid: false,
+        poster: "/videos/windsurfingPoster.png",
+        description:
+            "A video cutting application in C++ to help the coach of the Israeli Olympic windsurfing team in reviewing athlete footage",
+    },
+    {
+        title: "Zombie Party",
+        try: ["https://zombieparty.gganeles.com"],
+        tryTitles: ["Try It Yourself"],
+        github: "",
+        video: "/videos/zombieParty.mp4",
+        smallVid: false,
+        poster: "/videos/zombiePartyPoster.png",
+        description:
+            "A web-RTC based multiplayer game where players control a warrior with their phone's gyroscope and try to survive against waves of zombies. Built entirely in flutter.",
+    },
+    {
         title: "Shab-BOT",
         try: ["https://wa.me/12038025238?text=!help"],
         tryTitles: ["Try It Yourself"],
@@ -147,7 +183,19 @@ export const projects = [
         smallVid: true,
         poster: "/videos/shabBotPoster.png",
         description:
-            "During my time at Technion, my friends and I would plan Shabbat meals together almost every week.\nFiguring out what everyone was bringing was always a challenge to co-ordinate.\nTo address this, I wrote a command-driven bot that interfaces over Whatsapp.\nOver time, this turned into a fully fledged Whatsapp Bot, complete with a reminder system, scheduled messages, and a quick way to find Shabbat Candle lighting times for 100,000+ cities.\nThis was originally written using whatsapp-web.js, but in order to speed it up and reduce memory footprint, I ported it to @whiskeysockets/Baileys, then to Golang's Whatsmeow.",
+            `A command-driven bot that interfaces over Whatsapp, complete with a reminder system, scheduled messages, and a quick way to find Shabbat Candle lighting times for 100,000+ cities.
+This was originally written using whatsapp-web.js, but in order to speed it up and reduce memory footprint, I ported it to @whiskeysockets/Baileys, then to Golang's Whatsmeow.`,
+    },
+    {
+        title: "3D Printed Parachute Launcher",
+        try: [],
+        tryTitles: [],
+        github: "",
+        video: "/videos/parachuteLauncher.mp4",
+        smallVid: false,
+        poster: "/videos/parachuteLauncherPoster.png",
+        description:
+            "A 3D printed servo-based parachute launcher for a hybrid solid-gas rocket.",
     },
     {
         title: "Gabe's Games Corner",
@@ -158,14 +206,19 @@ export const projects = [
         videoTitles: ["v1", "v2"],
         smallVid: false,
         poster: "/videos/setgamePoster.png",
-        description: `In my second year of Techion, I reignited an old passion for a game called SET when I learned that one of my friends also loved it.
-    In order to play more conveniently, I figured I should make a website where we could play set with each other.
-    Although alternatives exist, I found they could not keep up with the fast pace my friends and I preferred.
-    In order to build my vision without paying a single cent, I implimented the game using Firebase's Realtime Database, thereby avoiding server costs. The site itself is written in Svelte, hosted for free on Firebase.
-    This implimentation worked well, and I ultimately used the same system to build 3 other games: Memory, Anagrams (snatch), and Skull.
-    However, there was a bug with this implimentation, specifically for quick games such as set. When two people find sets simultaneously, this system fails. The database doesn't send data to the clients fast enough to appropriately check both sets, and therefore they both get accepted.
-    To address this bug and refine the player experience, I ultimately ported my previous code to a new app, with a frontend written in SolidJS and a backend written in Rust.`,
+        description: `A web-based implementation of the some card games: "Set", "Memory", "Anagrams", and "Skull". Written with a SolidJS frontend and a Rust backend.`,
     },
+    {
+        title: "3d Printed Fountain",
+        try: [],
+        tryTitles: [],
+        github: "",
+        video: "/videos/fountain.mp4",
+        smallVid: false,
+        poster: "/videos/fountainPoster.png",
+        description:
+            "A 3D printed fountain for zen vibes.",
+    }
 ];
 
 export const awards = [
