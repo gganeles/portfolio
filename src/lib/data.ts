@@ -11,7 +11,8 @@ export const personalInfo = {
     whatsapp: "https://wa.me/972587120601",
     profilePicture: "/profile.webp",
     heroDescription:
-        "I am a fourth year Biomedical Engineering Student at Technion - Israel Institute of Technology. I'm passionate about software, mechanical, electrical and biomedical engineering and I strive to use my wide range of experience to create innovative hardware and software solutions. I'm excited to collaborate on novel and creative projects.",
+        `I am a recent graduate from the Technion - Israel Institute of Technology, where I pursued a degree in Biomedical Engineering. I have a sharp, inquisitive mind, always looking for clever ways to approach challenges. I love the process of solving complex problems and building innovative solutions.
+I have a strong background in software development, with experience in C++, Rust, Go, Python, and various full stack development frameworks. I also have a passion for hardware and embedded systems, with experience in PCB design and microcontroller programming.`,
 };
 
 export const workExperience = [
@@ -143,9 +144,10 @@ export const projects = [
         try: ["https://formulatechnion.ac.il/"],
         tryTitles: ["Visit Team Website"],
         github: "",
-        video: "/videos/formulaTech.mp4",
+        video: ["/videos/graphslam.webm", ""],
+        videoTitles: ["GraphSLAM + First Lap Planner", "Safety PCB"],
         smallVid: false,
-        poster: "/videos/formulaTechPoster.png",
+        poster: ["/videos/graphslamPoster.jpg", "/circuit.png"],
         description:
             `As the co-lead of the autonomous team, I spearheaded the design and implementation of the autonomous systems for a Formula-style race car. 
 Together, we developed a full perception to control pipeline, with custom PCBs to control the car's actuators and read sensor data.
@@ -157,20 +159,31 @@ Additionally, I coded the team's public-facing website, significantly enhancing 
         try: [],
         tryTitles: [],
         github: "https://github.com/gganeles/windsurfing",
-        video: "/videos/windsurfing.mp4",
+        video: ["/videos/windsurfing.webm",""],
         smallVid: false,
-        poster: "/videos/windsurfingPoster.png",
+        poster: ["/videos/windsurfingPoster.jpg","/videos/windsurfingGUI.png"],
         description:
             "A video cutting application in C++ to help the coach of the Israeli Olympic windsurfing team in reviewing athlete footage",
     },
     {
+        title: "Image-Based Horizon Detection Algorithm",
+        try: [],
+        tryTitles: [],
+        github: "https://github.com/gganeles/windsurfing",
+        video: ["/videos/horizon.webm"],
+        smallVid: false,
+        poster: ["/videos/horizon.jpg"],
+        description:
+            "An algorithm for detecting the horizon in images, useful for autonomous vehicles, drone navigation, and data analysis in sports.",
+    },
+    {
         title: "Zombie Party",
-        try: ["https://zombieparty.gganeles.com"],
+        try: ["https://gyronova.gganeles.com"],
         tryTitles: ["Try It Yourself"],
         github: "",
-        video: "/videos/zombieParty.mp4",
+        video: ["/videos/zombieParty.webm"],
         smallVid: false,
-        poster: "/videos/zombiePartyPoster.png",
+        poster: ["/videos/zombieParty.jpg"],
         description:
             "A web-RTC based multiplayer game where players control a warrior with their phone's gyroscope and try to survive against waves of zombies. Built entirely in flutter.",
     },
@@ -191,9 +204,9 @@ This was originally written using whatsapp-web.js, but in order to speed it up a
         try: [],
         tryTitles: [],
         github: "",
-        video: "/videos/parachuteLauncher.mp4",
-        smallVid: false,
-        poster: "/videos/parachuteLauncherPoster.png",
+        video: [""],
+        smallVid: true,
+        poster: ["/parachuteLauncher.png"],
         description:
             "A 3D printed servo-based parachute launcher for a hybrid solid-gas rocket.",
     },
@@ -213,9 +226,9 @@ This was originally written using whatsapp-web.js, but in order to speed it up a
         try: [],
         tryTitles: [],
         github: "",
-        video: "/videos/fountain.mp4",
-        smallVid: false,
-        poster: "/videos/fountainPoster.png",
+        video: ["/videos/fountain.webm"],
+        smallVid: true,
+        poster: ["/videos/fountainPoster.jpg"],
         description:
             "A 3D printed fountain for zen vibes.",
     }

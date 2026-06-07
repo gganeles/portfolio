@@ -6,7 +6,6 @@ import MotionWrapper from "./MotionWrapper";
 import ProjectVideo from "./ui/ProjectVideo";
 import { For, Show } from "solid-js";
 
-
 export default function ProjectsSection() {
     return (
         <section
@@ -19,16 +18,45 @@ export default function ProjectsSection() {
                         Projects
                     </h2>
                 </MotionWrapper>
+            </div>
 
-                <div class="flex flex-col gap-6">
+            {/*
+                Full-width horizontal scrollable carousel.
+                Padding provides the visual start position matching the heading.
+                scroll-padding ensures snap-start lands cards at the same spot.
+                snap-proximity is less aggressive than mandatory.
+            */}
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+                <div class="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+                {/*
+                    Dynamic padding formula matches the heading's computed position:
+                      narrow: 1.5rem (px-6 on mobile)
+                      wide:   (100vw - 56rem)/2 + 1rem (centered max-w-4xl + md:px-4)
+                    scroll-padding mirrors the padding so snap-start aligns to the
+                    same visual position.
+                */}
+                <div
+                    class="flex overflow-x-auto snap-x snap-proximity gap-6 pb-4"
+                    style={{
+                        "padding-left": "max(1.5rem, calc((100vw - 56rem) / 2 + 1rem))",
+                        "padding-right": "max(1.5rem, calc((100vw - 56rem) / 2 + 1rem))",
+                        "scroll-padding-left": "max(1.5rem, calc((100vw - 56rem) / 2 + 1rem))",
+                        "scroll-padding-right": "max(1.5rem, calc((100vw - 56rem) / 2 + 1rem))",
+                        "scrollbar-width": "thin",
+                        "scrollbar-color": "oklch(0.556 0 0) transparent",
+                        "-webkit-overflow-scrolling": "touch",
+                    }}
+                >
                     <For each={projects}>
-                        {(project, index) => (
-                            <MotionWrapper delay={index() * 0.2}>
-                                <GlassCard
-                                    class="group overflow-hidden dark:border-blue-500/10 h-full flex flex-col sm:flex-row"
-                                    hoverEffect={false}
-                                >
-                                    <div class="flex flex-col w-full">
+                        {(project) => (
+                            <div class="snap-start shrink-0 w-[85vw] md:w-[500px] lg:w-[580px]">
+                                <MotionWrapper delay={0}>
+                                    <GlassCard
+                                        class="group overflow-hidden dark:border-blue-500/10 h-full flex flex-col"
+                                        hoverEffect={false}
+                                    >
                                         <CardHeader class="bg-gradient-to-r from-blue-500/5 to-cyan-500/5">
                                             <CardTitle class="text-center md:text-left transition-colors duration-300">
                                                 {project.title}
@@ -110,9 +138,9 @@ export default function ProjectsSection() {
                                                 </a>
                                             </Show>
                                         </CardFooter>
-                                    </div>
-                                </GlassCard>
-                            </MotionWrapper>
+                                    </GlassCard>
+                                </MotionWrapper>
+                            </div>
                         )}
                     </For>
                 </div>

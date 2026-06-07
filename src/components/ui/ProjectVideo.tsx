@@ -3,7 +3,7 @@ import { Portal } from "solid-js/web";
 
 interface ProjectVideoProps {
     src: string | string[];
-    poster: string;
+    poster: string | string[];
     i?: number;
     title?: string;
 }
@@ -23,7 +23,7 @@ const ProjectVideo: Component<ProjectVideoProps> = (props) => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    setIsVisible(true);
+                    setIsVisible(true); ProjectVideo
                     observer.disconnect();
                 }
             });
@@ -51,26 +51,40 @@ const ProjectVideo: Component<ProjectVideoProps> = (props) => {
                     <Show when={!isBig()}>
                         <div
                             onClick={toggleBig}
-                            class="w-full h-full cursor-pointer relative"
+                            class="flex w-full h-full cursor-pointer relative"
                         >
                             <Show when={isVisible()}>
-                                <video
-                                    ref={videoRef}
-                                    src={videoSrc()}
-                                    controls={false}
-                                    loop
-                                    muted
-                                    autoplay
-                                    playsinline
-                                    poster={props.poster}
-                                    class="w-full h-full object-cover block"
-                                    preload="none"
-                                    onLoadedMetadata={(e) => {
-                                        setAspectRatio(e.currentTarget.videoWidth / e.currentTarget.videoHeight);
-                                    }}
+                                <Show when={videoSrc() !== ""}
                                 >
-                                    <source src={videoSrc()} />
-                                </video>
+                                    <video
+                                        ref={videoRef}
+                                        src={videoSrc()}
+                                        controls={false}
+                                        loop
+                                        muted
+                                        autoplay
+                                        playsinline
+                                        poster={props.poster[props.i || 0]}
+                                        class="w-full h-full object-cover block"
+                                        preload="none"
+                                        onLoadedMetadata={(e) => {
+                                            setAspectRatio(e.currentTarget.videoWidth / e.currentTarget.videoHeight);
+                                        }}
+                                    >
+                                        <source src={videoSrc()} />
+                                    </video>
+                                </Show>
+                                <Show when={videoSrc() === ""}>
+                                    <div class="w-full h-full flex items-center justify-center bg-muted">
+                                        <img src={props.poster[props.i || 0]} 
+                                            alt={props.title} 
+                                            class="w-full h-full object-cover" 
+                                            onload={(e) => {
+                                            setAspectRatio(e.currentTarget.naturalWidth / e.currentTarget.naturalHeight);
+                                        }} />
+                                    </div>
+                                </Show>
+
                             </Show>
                             <Show when={props.title}>
                                 <div class="absolute bottom-2 left-2 pointer-events-none">
@@ -108,18 +122,25 @@ const ProjectVideo: Component<ProjectVideoProps> = (props) => {
                                     height: `min(80vh, calc(80vw / ${aspectRatio()}))`,
                                 }}
                             >
-                                <video
-                                    controls
-                                    autoplay
-                                    playsinline
-                                    muted
-                                    class="w-full h-full block"
-                                    style={{
-                                        "object-fit": "cover",
-                                    }}
-                                >
-                                    <source src={videoSrc()} />
-                                </video>
+                                <Show when={videoSrc() !== ""}>
+                                    <video
+                                        controls
+                                        autoplay
+                                        playsinline
+                                        muted
+                                        class="w-full h-full block"
+                                        style={{
+                                            "object-fit": "cover",
+                                        }}
+                                    >
+                                        <source src={videoSrc()} />
+                                    </video>
+                                </Show>
+                                <Show when={videoSrc() === ""}>
+                                    <div class="w-full h-full flex items-center justify-center bg-muted">
+                                        <img src={props.poster[props.i || 0]} alt={props.title} class="w-full h-full object-contain" />
+                                    </div>
+                                </Show>
                             </div>
                             <button
                                 onClick={() => setIsBig(false)}

@@ -67,9 +67,6 @@ class Trig {
 
     trigObserver(entries) {
         requestAnimationFrame(() => { this.trigEntries(entries) });
-        entries.forEach((entry) => {
-            this.observer.unobserve(entry.target);
-        });
     }
 
     trigIntersecting(entry) {
