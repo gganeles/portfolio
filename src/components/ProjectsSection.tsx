@@ -64,7 +64,7 @@ export default function ProjectsSection() {
                                         </CardHeader>
 
                                         <Show when={!project.smallVid && Array.isArray(project.video)}>
-                                            <div class="flex flex-col sm:flex-row gap-2 md:gap-7 px-2 sm:px-8 pt-6">
+                                            <div class="flex flex-col items-center sm:flex-row gap-2 md:gap-7 px-2 sm:px-8 pt-6">
                                                 <For each={project.video as string[]}>
                                                     {(source, i) => (
                                                         <ProjectVideo
