@@ -141,7 +141,7 @@ export const skills = [
 export const projects = [
     {
         title: "Technion Formula Autonomous System",
-        try: ["https://formulatechnion.ac.il/"],
+        try: ["https://formulatechnion.com/"],
         tryTitles: ["Visit Team Website"],
         github: "",
         video: ["/videos/graphslam.webm", ""],
@@ -181,7 +181,7 @@ Additionally, I coded the team's public-facing website, significantly enhancing 
         try: ["https://gyronova.gganeles.com"],
         tryTitles: ["Try It Yourself"],
         github: "",
-        video: ["/videos/zombieParty.webm"],
+        video: ["/videos/zombieParty.webm#t=20"],
         smallVid: false,
         poster: ["/videos/zombieParty.jpg"],
         description:
@@ -222,7 +222,7 @@ This was originally written using whatsapp-web.js, but in order to speed it up a
         description: `A web-based implementation of the some card games: "Set", "Memory", "Anagrams", and "Skull". Written with a SolidJS frontend and a Rust backend.`,
     },
     {
-        title: "3d Printed Fountain",
+        title: "3D Printed Fountain",
         try: [],
         tryTitles: [],
         github: "",

@@ -24,9 +24,9 @@ export default function Home() {
                 </HeroSection>
                 <JumpToSection />
                 <ProjectsSection />
+                <AwardsSection />
                 <ExperienceSection />
                 <SkillsSection />
-                <AwardsSection />
                 <EducationSection />
             </main>
             <Footer />
